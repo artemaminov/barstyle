@@ -70,6 +70,27 @@ body {
 	border-radius: 10px;
 }
 
+.badge {
+	background: url("badge.png") no-repeat scroll 0 0 transparent;
+	width: 105px;
+	height: 43px;
+	margin: 0 0 -15px -20px;
+	padding: 5px 0 0 20px;
+}
+
+.badge-long {
+	background: url("badge-long.png") no-repeat scroll 0 0 transparent;
+	width: 226px;
+	height: 43px;
+	margin: 0 0 -15px -20px;
+	padding: 5px 0 0 20px;
+}
+
+.badge i, .badge-long i {
+	font: normal 1em "lucida console";
+	color: #D3D3C3;
+}
+
 .sidebar {
 	float: left;
 	width: 218px;
@@ -91,4 +112,12 @@ body {
 .footer {
 	background-color: #301e13;
 	height: 200px;
+}
+
+.news {
+	padding: 10px;
+}
+
+p {
+	font: normal 0.8em "Lucida Grande";
 }
