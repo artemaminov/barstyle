@@ -8,11 +8,87 @@ html, body {
 }
 
 html {
-	background: url("bg.jpg") repeat scroll
-		0px 0px transparent;
+	background: url("bg.jpg") repeat scroll 0 0 transparent;
 }
 
 body {
-	background: url("words.png") no-repeat scroll
-		50% 50px transparent;
+	background: url("words.png") no-repeat scroll 50% 50px transparent;
+}
+
+.container {
+	background: url("bgpaper.jpg") repeat scroll 0 0 transparent;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -474px;
+	width: 948px;
+}
+
+.woodframe {
+	background: url("woodframe.png") repeat-y scroll 0 0 transparent;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -522px;
+	width: 1044px;
+	height: 100%;
+}
+
+.head {
+	background: url("bar.jpg") no-repeat scroll 0 0 transparent;
+	width: 948px;
+	height: 338px;
+}
+
+.bglogo {
+	background: url("bglogo.png") no-repeat scroll 0 0 transparent;
+	position: absolute;
+	width: 215px;
+	height: 232px;
+	margin: -24px 0 0 39px;
+}
+
+.logo {
+	width: 150px;
+	height: 150px;
+	margin: 41px 0 0 32px;
+}
+
+.menu {
+	background: url("bgmenu.png") no-repeat scroll 0 0 transparent;
+	width: 948px;
+	height: 89px;
+}
+
+.content {
+	overflow: auto;
+}
+
+.sidebar, .main {
+	background-color: #d3d3c3;
+	height: 300px;
+	border-radius: 10px;
+}
+
+.sidebar {
+	float: left;
+	width: 218px;
+	margin-left: 20px;
+}
+
+.main {
+	float: right;
+	width: 671px;
+	margin-right: 20px;
+}
+
+.zz {
+	background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
+	clear: both;
+	height: 30px;
+}
+
+.footer {
+	background-color: #301e13;
+	height: 200px;
 }

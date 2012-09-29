@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-  <title>BarStyle</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<title>BarStyle</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
 
-<%= yield %>
+		<div class="head">
+			<div class="bglogo">
+				<%= link_to(image_tag("bgpaper.jpg", :class => "logo", :alt => "На главную")) %>
+			</div>
+		</div>
+		<div class="menu">
 
+		</div>
+
+		<div class="content">
+			<div class="sidebar"></div>
+			<div class="main">
+
+				<%= yield %>
+
+			</div>
+			<div class="zz"></div>
+		</div>
+
+		<div class="footer">
+
+		</div>
+
+		<div class="woodframe"></div>
+	</div>
 </body>
 </html>
