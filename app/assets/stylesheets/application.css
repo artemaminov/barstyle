@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'bankir-retro';
+	src: url('bankir-retro-webfont.eot');
+	src: url('bankir-retro-webfont.eot?#iefix') format('embedded-opentype'),
+	url('bankir-retro-webfont.woff') format('woff'),
+	url('bankir-retro-webfont.ttf') format('truetype'),
+	url('bankir-retro-webfont.svg#bankir-retroregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 * {
 	margin: 0;
 	border: 0;
@@ -25,6 +36,7 @@ body {
 }
 
 .woodframe {
+	pointer-events:none;
 	background: url("woodframe.png") repeat-y scroll 0 0 transparent;
 	position: absolute;
 	top: 0;
@@ -64,31 +76,32 @@ body {
 	overflow: auto;
 }
 
-.sidebar, .main {
-	background-color: #d3d3c3;
-	height: 300px;
-	border-radius: 10px;
+.badge, .badge-long {
+	margin: 0 0 -10px -20px;
+	padding: 0 0 0 20px;
 }
 
 .badge {
 	background: url("badge.png") no-repeat scroll 0 0 transparent;
 	width: 105px;
 	height: 43px;
-	margin: 0 0 -15px -20px;
-	padding: 5px 0 0 20px;
 }
 
 .badge-long {
 	background: url("badge-long.png") no-repeat scroll 0 0 transparent;
 	width: 226px;
 	height: 43px;
-	margin: 0 0 -15px -20px;
-	padding: 5px 0 0 20px;
 }
 
 .badge i, .badge-long i {
-	font: normal 1em "lucida console";
+	font: normal 1.2em "bankir-retro";
 	color: #D3D3C3;
+}
+
+.sidebar, .main {
+	background-color: #d3d3c3;
+	height: 300px;
+	border-radius: 10px;
 }
 
 .sidebar {
