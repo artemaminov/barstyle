@@ -11,6 +11,7 @@
 
 * {
 	margin: 0;
+	padding: 0;
 	border: 0;
 }
 
@@ -70,6 +71,49 @@ body {
 	background: url("bgmenu.png") no-repeat scroll 0 0 transparent;
 	width: 948px;
 	height: 89px;
+}
+
+.menu ul {
+	display: table;
+	float: left;
+	list-style: none outside none;
+	padding-top: 14px;
+	text-align: center;
+	width: 858px;
+}
+
+.menu li {
+	font: normal 1.4em "bankir-retro";
+	display: table-cell;
+	text-shadow: 1px 3px 3px black;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #a45a1f;
+}
+
+.menu-left, .menu-right, .menu-mid {
+	background-image: url("menu-dividers.png");
+	background-repeat: no-repeat;
+	height: 10px;
+	margin: 26px 12px 0;
+}
+
+.menu-left {
+	float: left;
+	width: 21px;
+}
+
+.menu-right {
+	background-position: -56px 0;
+	float: right;
+	width: 21px;
+}
+
+.menu-mid {
+	background-position: 22px 0;
+	width: 40px;
 }
 
 .content {

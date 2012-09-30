@@ -16,19 +16,22 @@
 				<%= link_to(image_tag("bgpaper.jpg", :class => "logo", :alt => "На главную")) %>
 			</div> -->
 		</div>
+
 		<div class="menu">
+			<div class="menu-left"></div>
 			<ul>
-				<li><a>новости</a></li>
-				<li><a>бар</a></li>
+				<% @menu.each do |section| %>
+				<li><a href="/"><%= section.name %></a></li>
+				<% end %>
 			</ul>
+			<div class="menu-right"></div>
 		</div>
 
 		<div class="content">
 			<div class="sidebar">
 
 				<div class="news">
-					<div class="badge"><i>23.09.12</i></div>
-					<p>Хорошая новость, первая новость!</p>
+					<div class="badge"><i>дата</i></div>
 				</div>
 
 			</div>
