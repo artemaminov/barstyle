@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001111936) do
+ActiveRecord::Schema.define(:version => 20121001163450) do
 
   create_table "active_admin_comments", :force => true do |t|
-    t.string   "resource_id",   :null => false
-    t.string   "resource_type", :null => false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "namespace"
+    t.text    "resource_id",   :limit => 255, :null => false
+    t.text    "resource_type", :limit => 255, :null => false
+    t.integer "author_id"
+    t.text    "author_type",   :limit => 255
+    t.text    "body"
+    t.text    "created_at",    :limit => 6,   :null => false
+    t.text    "updated_at",    :limit => 6,   :null => false
+    t.text    "namespace",     :limit => 255
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
@@ -29,29 +29,52 @@ ActiveRecord::Schema.define(:version => 20121001111936) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.text    "email",                  :limit => 255, :null => false
+    t.text    "encrypted_password",     :limit => 255, :null => false
+    t.text    "reset_password_token",   :limit => 255
+    t.text    "reset_password_sent_at", :limit => 6
+    t.text    "remember_created_at",    :limit => 6
+    t.integer "sign_in_count"
+    t.text    "current_sign_in_at",     :limit => 6
+    t.text    "last_sign_in_at",        :limit => 6
+    t.text    "current_sign_in_ip",     :limit => 255
+    t.text    "last_sign_in_ip",        :limit => 255
+    t.text    "created_at",             :limit => 6,   :null => false
+    t.text    "updated_at",             :limit => 6,   :null => false
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "menus", :force => true do |t|
-    t.string   "name"
+    t.text    "name",       :limit => 255
+    t.text    "permalink",  :limit => 255
+    t.integer "position"
+    t.text    "created_at", :limit => 6,   :null => false
+    t.text    "updated_at", :limit => 6,   :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
     t.string   "permalink"
-    t.integer  "position"
+    t.boolean  "main"
+    t.integer  "menu_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "rich_rich_files", :force => true do |t|
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        :default => "file"
   end
 
 end
