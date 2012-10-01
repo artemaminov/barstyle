@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930181743) do
+ActiveRecord::Schema.define(:version => 20121001111936) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120930181743) do
 
   create_table "menus", :force => true do |t|
     t.string   "name"
+    t.string   "permalink"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

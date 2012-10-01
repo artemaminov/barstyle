@@ -1,3 +1,3 @@
 class Menu < ActiveRecord::Base
-  attr_accessible :name, :position
+  attr_accessible :name, :permalink, :position
 end

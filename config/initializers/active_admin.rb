@@ -5,12 +5,12 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Barstyle Local"
+  config.site_title = "BarStyle"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -124,9 +124,11 @@ ActiveAdmin.setup do |config|
   # Active Admin resources from here.
   #
   # config.before_filter :do_something_awesome
+	config.skip_before_filter :get_menu
 
 
-  # == Register Stylesheets & Javascripts
+
+	# == Register Stylesheets & Javascripts
   #
   # We recommend using the built in Active Admin layout and loading
   # up your own stylesheets / javascripts to customize the look
