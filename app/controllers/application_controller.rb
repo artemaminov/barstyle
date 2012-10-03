@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	before_filter :get_menu
 
 	def get_menu
-		@menu = Menu.all
+		@menu = Menu.order("position")
 	end
 
 end

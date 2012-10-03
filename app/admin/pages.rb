@@ -1,4 +1,17 @@
 ActiveAdmin.register Page do
+
+	index do
+		column :menu_id do |page|
+			page.menu.name
+		end
+		column :main
+		column :title
+		column :text do |page|
+			raw strip_tags page.text.slice 0, 500
+		end
+		default_actions
+	end
+
 	form do |f|
 		f.inputs "Basic info" do
 			f.input :menu_id, :as => :select, :collection => Menu.all
