@@ -21,7 +21,7 @@
 			<div class="menu-left"></div>
 			<ul>
 				<% @menu_sections.each do |section| %>
-				<li><%= link_to section.name, section %></a></li>
+				<li><%= link_to section.name, section_path(section.permalink) %></a></li>
 				<% end %>
 			</ul>
 			<div class="menu-right"></div>
