@@ -20,8 +20,8 @@
 		<div class="menu">
 			<div class="menu-left"></div>
 			<ul>
-				<% @menu.each do |section| %>
-				<li><a href="/"><%= section.name %></a></li>
+				<% @menu_sections.each do |section| %>
+				<li><%= link_to section.name, section %></a></li>
 				<% end %>
 			</ul>
 			<div class="menu-right"></div>

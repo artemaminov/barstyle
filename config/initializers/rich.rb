@@ -39,6 +39,7 @@ if Object.const_defined?("Rich")
     # config.convert_options = {
     #     :large => '-quality 1'
     # }
+		Paperclip.options[:command_path] = "/opt/ImageMagick/bin/"
     
     # == Allowed styles (in file manager)
     # 

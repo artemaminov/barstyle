@@ -168,6 +168,17 @@ body {
 	padding: 0 0 20px 0;
 }
 
+.body img.left {
+	border: 2px solid black;
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+.body ol {
+	font: 0.8em "Lucida Grande";
+	padding: 0 0 20px 50px;
+}
+
 .zz {
 	background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
 	clear: both;

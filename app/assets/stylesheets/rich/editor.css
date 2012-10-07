@@ -16,5 +16,13 @@ img.left {
 }
 
 img.right {
+	border: 2px solid black;
 	float: right;
+	margin: 0 10px 5px 0;
+}
+
+img.left {
+	border: 2px solid black;
+	float: left;
+	margin: 0 10px 5px 0;
 }

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	before_filter :get_menu
 
 	def get_menu
-		@menu = Menu.order("position")
+		@menu_sections = Section.order("position")
 	end
 
 end

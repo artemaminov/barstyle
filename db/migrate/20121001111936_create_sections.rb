@@ -1,6 +1,6 @@
-class CreateMenus < ActiveRecord::Migration
+class CreateSections < ActiveRecord::Migration
   def change
-    create_table :menus do |t|
+    create_table :sections do |t|
       t.string :name
       t.string :permalink
       t.integer :position

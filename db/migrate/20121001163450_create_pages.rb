@@ -2,10 +2,11 @@ class CreatePages < ActiveRecord::Migration
   def change
     create_table :pages do |t|
       t.string :title
+			t.string :featured_image
       t.text :text
       t.string :permalink
       t.boolean :main
-      t.integer :menu_id
+      t.integer :section_id
 
       t.timestamps
     end

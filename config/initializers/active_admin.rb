@@ -124,7 +124,7 @@ ActiveAdmin.setup do |config|
   # Active Admin resources from here.
   #
   # config.before_filter :do_something_awesome
-	config.skip_before_filter :get_menu
+	# config.skip_before_filter :skipping_filter
 
 
 
