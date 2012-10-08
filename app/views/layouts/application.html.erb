@@ -36,9 +36,12 @@
 							<i><%= article.created_at.to_formatted_s(:short).downcase %></i>
 							<div class="badge-right"></div>
 						</div>
-						<p><%= article.title %></p>
-						<%= image_tag article.featured_image %>
-						<p class="preview"><%= raw strip_tags article.text.slice(0, 200) %>...</p>
+						<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
+						<%= link_to image_tag(article.featured_image), page_path(article.section.permalink, article.permalink) %>
+						<p class="preview">
+							<%= raw strip_tags article.text.slice(0, 200) %>...
+							<%= link_to " »&nbsp;читать&nbsp;далее".html_safe, page_path(article.section.permalink, article.permalink), :class => "underlined" %>
+						</p>
 					</div>
 				<% end %>
 
@@ -47,7 +50,7 @@
 
 				<div class="news">
 					<div class="badge">
-						<i>новости</i>
+						<i><%= @body ? @body.title : @current_section %></i>
 						<div class="badge-right"></div>
 					</div>
 				</div>

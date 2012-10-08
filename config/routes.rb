@@ -57,7 +57,8 @@ BarstyleLocal::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'index#home'
 
-	match ':section(/:page_permalink)' => 'index#show_page', :as => :section
+	match ':section' => 'index#show_page', :as => :section
+	match ':section/:page_permalink' => 'index#show_page', :as => :page
 
   # See how all your routes lay out with "rake routes"
 

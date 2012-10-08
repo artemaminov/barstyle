@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
 
-	scope :news, joins(:section).where('sections.position = 1')
+	scope :news, joins(:section).where('sections.position = 1').limit(5)
 
   attr_accessible :main, :section_id, :permalink, :text, :title, :featured_image
 

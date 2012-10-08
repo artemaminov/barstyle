@@ -206,6 +206,23 @@ body {
 	font-size: 0.7em;
 }
 
-p {
+h2 {
 	font: normal 1em "Lucida Grande";
+}
+
+.content a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+.underlined {
+	text-decoration: underline !important;
+}
+
+p {
+	font: normal 0.8em "Lucida Grande";
 }

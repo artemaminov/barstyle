@@ -7,6 +7,7 @@ class IndexController < ApplicationController
 
 	def show_page
 		# Rendering desired page if found
+		@current_section = params[:section]
 		page_permalink = params[:page_permalink]
 		if page_permalink
 			page = Page.find_by_permalink(page_permalink)

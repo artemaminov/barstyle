@@ -24,7 +24,7 @@ ActiveAdmin.register Page do
 			f.input :main, :as => :radio
 			f.input :title
 			f.input :permalink
-			f.input :featured_image, :as => :rich_picker#, :config => { :allowed_styles => [ :original ], :view_mode => "list" }
+			f.input :featured_image, :as => :rich_picker
 			f.input :text, :as => :rich, :config => { :width => '76%', :height => '400px' }
 		end
 		f.buttons
