@@ -21,7 +21,7 @@
 			<div class="menu-left"></div>
 			<ul>
 				<% @menu_sections.each do |section| %>
-				<li><%= link_to section.name, section_path(section.permalink) %></a></li>
+				<li><%= link_to section.name, section_path(section.permalink) %></li>
 				<% end %>
 			</ul>
 			<div class="menu-right"></div>
@@ -30,15 +30,26 @@
 		<div class="content">
 			<div class="sidebar">
 
-				<div class="news">
-					<div class="badge"><i>дата</i></div>
-				</div>
+				<% @news.each do |article| %>
+					<div class="news">
+						<div class="badge">
+							<i><%= article.created_at.to_formatted_s(:short).downcase %></i>
+							<div class="badge-right"></div>
+						</div>
+						<p><%= article.title %></p>
+						<%= image_tag article.featured_image %>
+						<p class="preview"><%= raw strip_tags article.text.slice(0, 200) %>...</p>
+					</div>
+				<% end %>
 
 			</div>
 			<div class="main">
 
 				<div class="news">
-					<div class="badge-long"><i>новости</i></div>
+					<div class="badge">
+						<i>новости</i>
+						<div class="badge-right"></div>
+					</div>
 				</div>
 
 				<div class="body">

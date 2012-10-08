@@ -79,7 +79,7 @@ body {
 	list-style: none outside none;
 	padding-top: 14px;
 	text-align: center;
-	width: 858px;
+	width: 846px;
 }
 
 .menu li {
@@ -96,19 +96,19 @@ body {
 .menu-left, .menu-right, .menu-mid {
 	background-image: url("menu-dividers.png");
 	background-repeat: no-repeat;
-	height: 10px;
-	margin: 26px 12px 0;
+	height: 20px;
+	margin: 22px 11px 0;
 }
 
 .menu-left {
 	float: left;
-	width: 21px;
+	width: 29px;
 }
 
 .menu-right {
-	background-position: -56px 0;
+	background-position: -74px 0;
 	float: right;
-	width: 21px;
+	width: 29px;
 }
 
 .menu-mid {
@@ -120,26 +120,27 @@ body {
 	overflow: auto;
 }
 
-.badge, .badge-long {
-	margin: 0 0 -10px -20px;
-	padding: 0 0 0 20px;
-}
-
 .badge {
-	background: url("badge.png") no-repeat scroll 0 0 transparent;
-	width: 105px;
-	height: 43px;
+	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
+	height: 41px;
+	margin: 0 0 -10px -19px;
+	padding: 0 0 0 13px;
 }
 
-.badge-long {
-	background: url("badge-long.png") no-repeat scroll 0 0 transparent;
-	width: 226px;
-	height: 43px;
-}
-
-.badge i, .badge-long i {
-	font: normal 1.2em "bankir-retro";
+.badge i {
+	background: url("badge-mid.png") repeat-x 0 0 transparent;
+	font: normal 1.1em "bankir-retro";
 	color: #D3D3C3;
+	float: left;
+	padding: 0 10px 0 8px;
+	height: 28px;
+}
+
+.badge-right {
+	background: url("badge-right.png") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 28px;
+	width: 20px;
 }
 
 .sidebar, .main {
@@ -194,6 +195,17 @@ body {
 	padding: 10px;
 }
 
+.sidebar img {
+	float: left;
+	border: 2px solid black;
+	margin: 0 5px 0 0;
+	width: 65px;
+}
+
+.preview {
+	font-size: 0.7em;
+}
+
 p {
-	font: normal 0.8em "Lucida Grande";
+	font: normal 1em "Lucida Grande";
 }

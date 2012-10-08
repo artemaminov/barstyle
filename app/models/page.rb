@@ -1,4 +1,7 @@
 class Page < ActiveRecord::Base
+
+	scope :news, joins(:section).where('sections.position = 1')
+
   attr_accessible :main, :section_id, :permalink, :text, :title, :featured_image
 
 	belongs_to :section
