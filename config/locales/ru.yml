@@ -2,6 +2,69 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    -
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
   time:
     formats:
-      long: "%d/%m/%Y %I:%M:%S"
+      long: "%d.%m.%Y %I:%M:%S"
+      short: "%d.%m.%Y"
+      default: "%d %b %Y"
+  picker_browse: "Загрузить"
+  view_grid: "Табличный просмотр"
+  view_list: ""
+  insert_many: ""
+  insert_one: ""
+  available_styles: ""
+  upload_a_file: ""
+  delete: ""

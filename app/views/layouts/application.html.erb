@@ -33,7 +33,7 @@
 				<% @news.each do |article| %>
 					<div class="news">
 						<div class="badge">
-							<i><%= article.created_at.to_formatted_s(:short).downcase %></i>
+							<i><%= l article.created_at %></i>
 							<div class="badge-right"></div>
 						</div>
 						<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
@@ -46,20 +46,7 @@
 				<% end %>
 
 			</div>
-			<div class="main">
-
-				<div class="news">
-					<div class="badge">
-						<i><%= @body ? @body.title : @current_section %></i>
-						<div class="badge-right"></div>
-					</div>
-				</div>
-
-				<div class="body">
-					<%= yield %>
-				</div>
-
-			</div>
+			<%= yield %>
 			<div class="zz"></div>
 		</div>
 

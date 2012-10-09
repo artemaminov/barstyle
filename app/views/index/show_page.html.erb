@@ -2,12 +2,15 @@
 
 	<div class="news">
 		<div class="badge">
-			<i><%= "кто мы" %></i>
+			<i><%= @body.title.mb_chars.downcase %></i>
 			<div class="badge-right"></div>
 		</div>
 	</div>
 
 	<div class="body">
+		<%= image_tag @body.featured_image, :class => 'featured' %>
+		<br>
+		<%= raw @body.text %>
 	</div>
 
 </div>
