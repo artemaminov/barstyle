@@ -39,7 +39,15 @@ if Object.const_defined?("Rich")
     # config.convert_options = {
     #     :large => '-quality 1'
     # }
+
 		Paperclip.options[:command_path] = "/opt/ImageMagick/bin/"
+
+		Paperclip::Attachment.default_options[:storage] = :s3
+		Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
+		Paperclip::Attachment.default_options[:bucket] = "barstyle"
+		Paperclip::Attachment.default_options[:path] = "/:class/:attachment/:id_partition/:style/:filename"
+		Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
+		Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
     
     # == Allowed styles (in file manager)
     # 

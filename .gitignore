@@ -19,3 +19,4 @@
 /.idea/
 /log/
 /public/system
+/config/s3.yml

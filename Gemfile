@@ -7,11 +7,14 @@ gem 'pg'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-	gem 'sqlite3'
-	gem 'seed_dump'
+
 end
 
 group :production do
+
+end
+
+group :test do
 
 end
 
@@ -31,6 +34,7 @@ gem 'jquery-rails'
 
 gem 'activeadmin'
 gem 'rich'
+gem 'aws-sdk', '~> 1.3.4'
 
 gem 'stringex'
 
