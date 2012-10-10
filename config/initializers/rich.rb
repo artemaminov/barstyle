@@ -51,7 +51,7 @@ if Object.const_defined?("Rich")
 			Paperclip::Attachment.default_options[:path] = "/:class/:attachment/:id_partition/:style/:filename"
 			Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
 			Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
-		elsif Rails.env.prodaction?
+		elsif Rails.env.production?
 			# Production setup
 			Paperclip::Attachment.default_options[:s3_credentials] = {
 					:bucket            => ENV['S3_BUCKET_NAME'],
