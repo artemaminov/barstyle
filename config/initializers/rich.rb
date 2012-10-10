@@ -43,11 +43,23 @@ if Object.const_defined?("Rich")
 		Paperclip.options[:command_path] = "/opt/ImageMagick/bin/"
 
 		Paperclip::Attachment.default_options[:storage] = :s3
-		Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
-		Paperclip::Attachment.default_options[:bucket] = "barstyle"
-		Paperclip::Attachment.default_options[:path] = "/:class/:attachment/:id_partition/:style/:filename"
-		Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
-		Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
+
+		# Development setup
+		# Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
+		# Paperclip::Attachment.default_options[:bucket] = "barstyle"
+		# Paperclip::Attachment.default_options[:path] = "/:class/:attachment/:id_partition/:style/:filename"
+		# Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
+		# Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
+
+		# Production setup
+		Paperclip::Attachment.default_options[:s3_credentials] = {
+				:bucket            => ENV['S3_BUCKET_NAME'],
+				:access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
+				:secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+		}
+		Paperclip::Attachment.default_options[:path] = ENV['AWS_PATH']
+		Paperclip::Attachment.default_options[:url] = ENV['AWS_URL']
+		Paperclip::Attachment.default_options[:s3_domain_url] = ENV['S3_DOMAIN_URL']
     
     # == Allowed styles (in file manager)
     # 
