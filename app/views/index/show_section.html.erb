@@ -1,19 +1,6 @@
-<div class="main">
-
-	<div class="news">
-		<div class="badge">
-			<i><%= @section.name.mb_chars.downcase %></i>
-			<div class="badge-right"></div>
-		</div>
-	</div>
-
-	<div class="body">
-		<% @at_main.each do |article| %>
-			<h2><%= article.title %></h2>
-			<%= image_tag article.featured_image, :class => 'featured' %>
-			<br>
-			<%= raw article.text %>
-		<% end %>
-	</div>
-
-</div>
+<% @section.pages_at_main.each do |article| %>
+	<h2><%= article.title %></h2>
+	<%= image_tag article.featured_image, :class => 'featured' %>
+	<br>
+	<%= raw article.announce %>
+<% end %>

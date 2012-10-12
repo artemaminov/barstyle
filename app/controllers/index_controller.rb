@@ -6,23 +6,23 @@ class IndexController < ApplicationController
 
 	def show_section
 		# Rendering section if found
-		current_section = Section.find_by_permalink(params[:section])
+		current_section = Section.current(params[:section])
 		if current_section
+			@title = current_section.name
 			@section = current_section
-		else
+		end
 
-		end
-		at_main = Page.at_main(current_section.permalink)
-		if at_main
-			@at_main = at_main
-		end
+	rescue
+			@title = t(:default, :scope => :errors)
+			render :template => "shared/_not_found", :status => :not_found
 	end
 
 	def show_page
 		# Rendering desired page if found
 		page = Page.find_by_permalink(params[:page_permalink])
 		if page
-			@body = page
+			@title = page.title
+			@content = page
 		else
 
 		end

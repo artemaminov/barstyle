@@ -1,0 +1,14 @@
+<% @news.each do |article| %>
+	<div class="news">
+		<div class="badge">
+			<i><%= l article.created_at %></i>
+			<div class="badge-right"></div>
+		</div>
+		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
+		<%= link_to image_tag(article.featured_image), page_path(article.section.permalink, article.permalink) %>
+		<p class="preview">
+			<%= raw strip_tags article.text.slice(0, 200) %>...
+			<%= link_to " »&nbsp;читать&nbsp;далее".html_safe, page_path(article.section.permalink, article.permalink), :class => "underlined" %>
+		</p>
+	</div>
+<% end %>

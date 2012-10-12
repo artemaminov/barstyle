@@ -27,7 +27,8 @@ if Object.const_defined?("Rich")
     # remember to re-generate your styles by running:
     #   rake rich:refresh_assets
     config.image_styles = {
-      :thumb => "100x100#"
+      :thumb => "100x100#",
+      :page => "280x280>"
     }
 
     # == Convert options

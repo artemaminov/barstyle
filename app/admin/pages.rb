@@ -10,10 +10,10 @@ ActiveAdmin.register Page do
 			page.title.to_url
 		end
 		column :featured_image do |page|
-			raw "<img src=\"#{page.featured_image}\">"
+			image_tag page.featured_image
 		end
-		column :text do |page|
-			raw strip_tags page.text.slice 0, 300
+		column :announce do |page|
+			raw strip_tags page.announce
 		end
 		default_actions
 	end

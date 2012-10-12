@@ -73,3 +73,5 @@ ru:
   upload_a_file: "Загрузить"
   delete: "Удалить"
   delete_confirm: "Удалить?"
+  errors:
+    default: "Ошибка!"
