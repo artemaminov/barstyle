@@ -122,7 +122,7 @@ body {
 
 .badge {
 	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
-	height: 41px;
+	height: 42px;
 	margin: 0 0 -10px -19px;
 	padding: 0 0 0 13px;
 }
@@ -133,14 +133,38 @@ body {
 	color: #D3D3C3;
 	float: left;
 	padding: 0 10px 0 8px;
-	height: 28px;
+	height: 29px;
 }
 
 .badge-right {
 	background: url("badge-right.png") no-repeat scroll 0 0 transparent;
 	float: left;
-	height: 28px;
-	width: 20px;
+	height: 29px;
+	width: 13px;
+}
+
+.badge-link {
+	background: url("badge-link-left.png") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 26px;
+}
+
+a.badge-link {
+	background: url("badge-link-mid.png") repeat-x scroll 0 0 transparent;
+	color: #D3D3C3 !important;
+	float: left;
+	font: 0.8em "Lucida Grande";
+	height: 25px;
+	margin: 1px 0 0 11px;
+	padding: 3px 5px 0;
+}
+
+.badge-link-right {
+	background: url("badge-link-right.png") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 25px;
+	margin: 1px 0 0;
+	width: 15px;
 }
 
 .sidebar, .main {
@@ -166,7 +190,7 @@ body {
 }
 
 .body p {
-	padding: 0 0 20px 0;
+	padding: 0 0 8px 0;
 }
 
 .body img.left {
