@@ -5,16 +5,13 @@ ActiveAdmin.register Page do
 			page.section.name
 		end
 		column :main
+		column :is_subsection
 		column :title
-		column :permalink do |page|
-			page.title.to_url
-		end
 		column :featured_image do |page|
-			image_tag page.featured_image
+			image_tag page.featured_image, :class => 'thumb'
 		end
-		column :announce do |page|
-			raw strip_tags page.announce
-		end
+		column :static_attached
+		column :announce
 		default_actions
 	end
 
@@ -22,10 +19,13 @@ ActiveAdmin.register Page do
 		f.inputs "Basic info" do
 			f.input :section_id, :as => :select, :collection => Section.all
 			f.input :main, :as => :radio
+			f.input :is_subsection, :as => :radio
 			f.input :title
-			f.input :permalink
 			f.input :featured_image, :as => :rich_picker
+			f.input :announce, :input_html => { :rows => 5 }
 			f.input :text, :as => :rich, :config => { :width => '76%', :height => '400px' }
+			f.input :static_attached
+			f.input :permalink
 		end
 		f.buttons
 	end

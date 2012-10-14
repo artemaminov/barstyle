@@ -28,6 +28,7 @@ if Object.const_defined?("Rich")
     #   rake rich:refresh_assets
     config.image_styles = {
       :thumb => "100x100#",
+			:news_list => "230x150>",
       :page => "280x280>"
     }
 

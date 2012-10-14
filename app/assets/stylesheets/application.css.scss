@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+$border: 2px;
+$border-color: #301E13;
+
 @font-face {
 	font-family: 'bankir-retro';
 	src: url('bankir-retro-webfont.eot');
@@ -7,12 +16,6 @@
 	url('bankir-retro-webfont.svg#bankir-retroregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
 }
 
 html, body {
@@ -27,6 +30,7 @@ body {
 	background: url("words.png") no-repeat scroll 50% 50px transparent;
 }
 
+// -Template
 .container {
 	background: url("bgpaper.jpg") repeat scroll 0 0 transparent;
 	position: absolute;
@@ -67,6 +71,7 @@ body {
 	margin: 41px 0 0 32px;
 }
 
+// --Menu
 .menu {
 	background: url("bgmenu.png") no-repeat scroll 0 0 transparent;
 	width: 948px;
@@ -83,14 +88,7 @@ body {
 }
 
 .menu li {
-	font: normal 1.4em "bankir-retro";
-	display: table-cell;
-	text-shadow: 1px 3px 3px black;
-}
-
-.menu a {
-	text-decoration: none;
-	color: #a45a1f;
+  display: table-cell;
 }
 
 .menu-left, .menu-right, .menu-mid {
@@ -115,25 +113,20 @@ body {
 	background-position: 22px 0;
 	width: 40px;
 }
+// --
 
 .content {
-	overflow: auto;
+  overflow: auto;
 }
+// -
 
+// -Badges
+// --Curved
 .badge {
 	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
 	height: 42px;
 	margin: 0 0 -10px -19px;
 	padding: 0 0 0 13px;
-}
-
-.badge i {
-	background: url("badge-mid.png") repeat-x 0 0 transparent;
-	font: normal 1.1em "bankir-retro";
-	color: #D3D3C3;
-	float: left;
-	padding: 0 10px 0 8px;
-	height: 29px;
 }
 
 .badge-right {
@@ -142,21 +135,13 @@ body {
 	height: 29px;
 	width: 13px;
 }
+// --
 
+// --Link
 .badge-link {
 	background: url("badge-link-left.png") no-repeat scroll 0 0 transparent;
 	float: left;
 	height: 26px;
-}
-
-a.badge-link {
-	background: url("badge-link-mid.png") repeat-x scroll 0 0 transparent;
-	color: #D3D3C3 !important;
-	float: left;
-	font: 0.8em "Lucida Grande";
-	height: 25px;
-	margin: 1px 0 0 11px;
-	padding: 3px 5px 0;
 }
 
 .badge-link-right {
@@ -166,7 +151,10 @@ a.badge-link {
 	margin: 1px 0 0;
 	width: 15px;
 }
+// --
+// -
 
+// -Sidebar
 .sidebar, .main {
 	background-color: #d3d3c3;
 	min-height: 400px;
@@ -179,6 +167,18 @@ a.badge-link {
 	margin-left: 20px;
 }
 
+.sidebar img {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 65px;
+}
+
+.preview {
+  font-size: 0.7em;
+}
+// -
+
+// -Main block
 .main {
 	float: right;
 	width: 671px;
@@ -189,70 +189,99 @@ a.badge-link {
 	padding: 0 11px;
 }
 
-.body p {
-	padding: 0 0 8px 0;
+.body .featured {
+  float: left;
+  margin: 10px 10px 0 0;
 }
+// -
 
-.body img.left {
-	border: 2px solid black;
-	float: left;
-	margin: 0 10px 5px 0;
-}
-
-.body img.featured {
-	border: 2px solid black;
-	float: left;
-	margin: 10px 10px 0 0;
-}
-
-.body ol {
-	font: 0.8em "Lucida Grande";
-	padding: 0 0 20px 50px;
-}
-
+// -Footer
 .zz {
-	background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
-	clear: both;
-	height: 30px;
+  background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
+  clear: both;
+  height: 30px;
 }
 
 .footer {
-	background-color: #301e13;
-	height: 200px;
+  background-color: #301e13;
+  height: 200px;
 }
+// -
 
-.news {
-	padding: 10px;
-}
-
-.sidebar img {
-	float: left;
-	border: 2px solid black;
-	margin: 0 5px 0 0;
-	width: 65px;
-}
-
-.preview {
-	font-size: 0.7em;
+// -General
+// --Text
+.content p, .content h2, .content ol {
+  font-family: "Lucida Grande";
+  font-weight: normal;
 }
 
 h2 {
-	font: normal 1em "Lucida Grande";
+  font-size: 1em;
 }
 
-.content a {
-	color: #000000;
-	text-decoration: none;
+.badge i {
+  background: url("badge-mid.png") repeat-x 0 0 transparent;
+  font: normal 1.1em "bankir-retro";
+  color: #D3D3C3;
+  float: left;
+  padding: 0 10px 0 8px;
+  height: 29px;
 }
 
-.content a:hover {
-	text-decoration: underline;
+.main p {
+  font-size: 0.8em;
+  padding: 0 0 8px 0;
+}
+
+.body ol {
+  font-size: 0.8em;
+  padding: 0 0 20px 50px;
 }
 
 .underlined {
-	text-decoration: underline !important;
+  text-decoration: underline !important;
+}
+// --
+
+// --Links
+.menu a {
+  text-decoration: none;
+  color: #a45a1f;
+  font: normal 1.4em "bankir-retro";
+  text-shadow: 1px 3px 3px black;
 }
 
-p {
-	font: normal 0.8em "Lucida Grande";
+.content a {
+  font-family: "Lucida Grande";
+  font-weight: normal;
+  color: #000000;
+  text-decoration: none;
 }
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.badge-link a {
+  background: url("badge-link-mid.png") repeat-x scroll 0 0 transparent;
+  color: #D3D3C3 !important;
+  float: left;
+  font-size: 0.7em;
+  height: 25px;
+  margin: 1px 0 0 11px;
+  padding: 4px 5px 0;
+}
+// --
+
+.news {
+  padding: 10px;
+}
+
+.border {
+  border: $border solid $border-color;
+}
+
+.ya-map {
+  background-color: #301E13;
+}
+// -

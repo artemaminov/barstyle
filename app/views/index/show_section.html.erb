@@ -1,6 +1,31 @@
 <% @section.pages_at_main.each do |article| %>
-	<h2><%= article.title %></h2>
-	<%= image_tag article.featured_image, :class => 'featured' %>
-	<br>
-	<%= raw article.announce %>
+	<% if article.announce.empty? %>
+
+		<h2><%= article.title %></h2>
+		<% if !article.featured_image.empty? %>
+			<%= image_tag article.featured_image, :class => 'featured border' %>
+			<br>
+		<% end %>
+		<p>
+			<%= raw article.text %>
+			<% if !article.static_attached.empty? %>
+				<%= render 'shared/' + article.static_attached %>
+			<% end %>
+		</p>
+
+	<% elsif %>
+
+		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
+		<% if !article.featured_image.empty? %>
+			<%= link_to(image_tag(article.featured_image, :class => 'featured border'), page_path(article.section.permalink, article.permalink)) %>
+			<br>
+		<% end %>
+		<p>
+			<%= raw article.announce %>
+			<div class="badge-link">
+			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), :class => "badge-link" %>
+			<div class="badge-link-right"></div></div>
+		</p>
+
+	<% end %>
 <% end %>

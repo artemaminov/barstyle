@@ -1,3 +1,5 @@
-<%= image_tag @content.featured_image, :class => 'featured' %>
+<% if !@content.featured_image.empty? %>
+	<%= image_tag @content.featured_image, :class => 'featured border' %>
+<% end %>
 <br>
 <%= raw @content.text %>

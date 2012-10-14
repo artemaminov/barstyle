@@ -6,10 +6,6 @@ class Section < ActiveRecord::Base
 
 	before_validation :make_permalink
 
-	def self.current(permalink)
-		current = find_by_permalink!(permalink)
-	end
-
 	def pages_at_main
 		Page.at_main(self.permalink)
 	end
@@ -18,6 +14,6 @@ class Section < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = name.to_url if !self.permalink
+		self.permalink = name.to_url if permalink.empty?
 	end
 end

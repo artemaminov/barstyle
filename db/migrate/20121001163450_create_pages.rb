@@ -8,6 +8,8 @@ class CreatePages < ActiveRecord::Migration
       t.string :permalink
       t.boolean :main
       t.integer :section_id
+			t.boolean :is_subsection
+			t.string :static_attached
 
       t.timestamps
     end

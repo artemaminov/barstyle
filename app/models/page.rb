@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
 
-  attr_accessible :main, :section_id, :permalink, :announce, :text, :title, :featured_image
+  attr_accessible :main, :section_id, :permalink, :announce, :text, :title, :featured_image, :is_subsection, :static_attached
 
 	belongs_to :section
 
@@ -18,6 +18,7 @@ class Page < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = title.to_url if !self.permalink
+		self.permalink = title.to_url if permalink.empty?
 	end
+
 end

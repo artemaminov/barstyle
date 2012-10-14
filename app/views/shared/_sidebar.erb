@@ -5,10 +5,10 @@
 			<div class="badge-right"></div>
 		</div>
 		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
-		<%= link_to image_tag(article.featured_image), page_path(article.section.permalink, article.permalink) %>
+		<%= link_to image_tag(article.featured_image, :class => 'border'), page_path(article.section.permalink, article.permalink) %>
 		<p class="preview">
-			<%= raw strip_tags article.text.slice(0, 200) %>...
-			<%= link_to " »&nbsp;читать&nbsp;далее".html_safe, page_path(article.section.permalink, article.permalink), :class => "underlined" %>
+			<%= raw strip_tags article.announce %>
 		</p>
+		<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), :class => "preview" %>
 	</div>
 <% end %>
