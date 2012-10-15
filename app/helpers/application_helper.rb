@@ -4,9 +4,10 @@ module ApplicationHelper
 		title.mb_chars.downcase
 	end
 
-	def truncate_words(text, length = 100, end_string = '...')
-		words = text.split()
-		words[0..(length-1)].join(' ') + (words.length > length ? end_string : '')
+	def aws_image_tag(source, options = {})
+		image_url = image_tag(source, options)
+		# image_id = image_url.match(/(?<=\/images\/)(\d)+(?=\/)/)
+		image_url.gsub(/\/page_preview\//, "/#{options[:style]}/").html_safe
 	end
 
 end

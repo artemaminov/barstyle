@@ -180,18 +180,25 @@ body {
 
 // -Main block
 .main {
-	float: right;
-	width: 671px;
-	margin-right: 20px;
+  float: right;
+  margin-right: 20px;
+  padding: 0 0 50px;
+  width: 671px;
 }
 
 .body {
-	padding: 0 11px;
+	//padding: 0 11px;
 }
 
 .body .featured {
   float: left;
-  margin: 10px 10px 0 0;
+  margin: 3px 10px 0 0;
+}
+
+.news-block {
+  clear: both;
+  overflow: auto;
+  margin-bottom: 10px;
 }
 // -
 
@@ -209,14 +216,26 @@ body {
 // -
 
 // -General
+// --Media
+.media_embed {
+  overflow: visible !important;
+}
+.media_embed iframe {
+  width: 645px;
+  margin: 10px auto;
+  @extend .border
+}
+// --
+
 // --Text
-.content p, .content h2, .content ol {
-  font-family: "Lucida Grande";
+.content p, .content h2, .content ol, .content a {
+  font-family: "Lucida Grande", Verdana;
   font-weight: normal;
 }
 
 h2 {
   font-size: 1em;
+  //clear: both;
 }
 
 .badge i {
@@ -231,11 +250,13 @@ h2 {
 .main p {
   font-size: 0.8em;
   padding: 0 0 8px 0;
+  // overflow: auto;
 }
 
 .body ol {
   font-size: 0.8em;
   padding: 0 0 20px 50px;
+  overflow: auto;
 }
 
 .underlined {
@@ -252,7 +273,6 @@ h2 {
 }
 
 .content a {
-  font-family: "Lucida Grande";
   font-weight: normal;
   color: #000000;
   text-decoration: none;

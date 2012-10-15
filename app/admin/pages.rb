@@ -8,7 +8,7 @@ ActiveAdmin.register Page do
 		column :is_subsection
 		column :title
 		column :featured_image do |page|
-			image_tag page.featured_image, :class => 'thumb'
+			aws_image_tag(page.featured_image, :style => 'thumb')
 		end
 		column :static_attached
 		column :announce

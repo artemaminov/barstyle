@@ -7,7 +7,7 @@ class Page < ActiveRecord::Base
 	before_validation :make_permalink
 
 	def self.news(except_article = nil)
-		joins(:section).where('sections.position = 1 AND main = FALSE').limit(5)
+		joins(:section).where('sections.position = 1 AND main = FALSE').order('created_at DESC').limit(5)
 	end
 
 	def self.at_main(permalink)

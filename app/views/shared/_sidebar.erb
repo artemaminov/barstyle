@@ -5,7 +5,9 @@
 			<div class="badge-right"></div>
 		</div>
 		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
-		<%= link_to image_tag(article.featured_image, :class => 'border'), page_path(article.section.permalink, article.permalink) %>
+		<% if !article.featured_image.empty? %>
+			<%= link_to aws_image_tag(article.featured_image, :class => 'border', :style => 'thumb'), page_path(article.section.permalink, article.permalink) %>
+		<% end %>
 		<p class="preview">
 			<%= raw strip_tags article.announce %>
 		</p>
