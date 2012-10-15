@@ -21,7 +21,7 @@ class IndexController < ApplicationController
 		# Rendering desired page if found
 		page = Page.find_by_permalink!(params[:page_permalink])
 		if page
-			@title = page.title
+			@title = page.section.name
 			@content = page
 		end
 

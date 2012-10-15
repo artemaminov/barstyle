@@ -91,7 +91,7 @@ body {
   display: table-cell;
 }
 
-.menu-left, .menu-right, .menu-mid {
+.menu-left, .menu-right, .menu-divider {
 	background-image: url("menu-dividers.png");
 	background-repeat: no-repeat;
 	height: 20px;
@@ -109,9 +109,9 @@ body {
 	width: 29px;
 }
 
-.menu-mid {
-	background-position: 22px 0;
-	width: 40px;
+.menu-divider {
+  background-position: -34px 8px;
+  width: 36px;
 }
 // --
 
