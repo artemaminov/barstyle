@@ -291,6 +291,37 @@ body {
 }
 // --
 
+// --Social icons
+.social-icons {
+  bottom: 50px;
+  position: absolute;
+  right: 15px;
+}
+
+.sc-vk, .sc-tw, .sc-fb {
+  background-image: url("social-icons.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 45px;
+  height: 45px;
+  float: left;
+  margin-right: 6px;
+}
+
+.sc-vk {
+  background-position: 0 0;
+}
+
+.sc-fb {
+  background-position: -56px 0;
+}
+
+.sc-tw {
+  background-position: -112px 0;
+}
+// --
+
 .news {
   padding: 10px;
 }

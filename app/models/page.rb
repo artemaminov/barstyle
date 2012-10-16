@@ -12,7 +12,7 @@ class Page < ActiveRecord::Base
 
 	# TODO section_id = 1 hardcode
 	def self.news(except_article = nil)
-		where("section_id = 1 AND main = TRUE AND is_subsection = FALSE AND NOT permalink = '#{except_article}'").order("created_at DESC").limit(5)
+		where("section_id = 1 AND main = TRUE AND is_subsection = FALSE AND NOT permalink = '#{except_article}'").order("created_at DESC")
 	end
 
 	# TODO permalink == 'news' hardcode
