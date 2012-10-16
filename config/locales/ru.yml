@@ -58,7 +58,7 @@ ru:
   time:
     formats:
       long: "%d.%m.%Y %I:%M:%S"
-      short: "%d.%m.%Y"
+      short: "%d %b"
       default: "%d %b %Y"
   picker_browse: "Выбрать или загрузить"
   view_grid: "Табличный просмотр"

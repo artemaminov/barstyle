@@ -1,29 +1,33 @@
 <% @section.pages_at_main.each do |article| %>
+
 	<div class="news-block">
+
 	<% if article.announce.empty? %>
 
 		<h2><%= article.title %></h2>
+
 		<% if !article.featured_image.empty? %>
-			<%= image_tag(article.featured_image, :class => 'featured border') %>
-			<br>
+			<%= image_tag(article.featured_image, class: 'featured border') %>
 		<% end %>
-		<p>
-			<%= raw article.text %>
-			<% if !article.static_attached.empty? %>
-				<%= render 'shared/' + article.static_attached %>
-			<% end %>
-		</p>
+
+		<%= raw article.text %>
+
+		<% if !article.static_attached.empty? %>
+			<%= render 'shared/' + article.static_attached %>
+		<% end %>
 
 	<% else %>
 
 		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
+
 		<% if !article.featured_image.empty? %>
-			<%= link_to(aws_image_tag(article.featured_image, :class => 'featured border', :style => 'news_list'), page_path(article.section.permalink, article.permalink)) %>
+			<%= link_to(aws_image_tag(article.featured_image, class: 'featured border', style: 'news_list'), page_path(article.section.permalink, article.permalink)) %>
 		<% end %>
+
 		<p>
 			<%= raw article.announce %>
 			<div class="badge-link">
-			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), :class => "badge-link" %>
+			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), class: "badge-link" %>
 			<div class="badge-link-right"></div></div>
 		</p>
 

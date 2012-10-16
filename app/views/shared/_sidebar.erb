@@ -1,16 +1,48 @@
-<% @news.each do |article| %>
+<% if !@subsections.blank? %>
+
 	<div class="news">
 		<div class="badge">
-			<i><%= l article.created_at %></i>
+			<i>подразделы</i>
 			<div class="badge-right"></div>
 		</div>
-		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
-		<% if !article.featured_image.empty? %>
-			<%= link_to aws_image_tag(article.featured_image, :class => 'border', :style => 'thumb'), page_path(article.section.permalink, article.permalink) %>
-		<% end %>
-		<p class="preview">
-			<%= raw strip_tags article.announce %>
-		</p>
-		<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), :class => "preview" %>
+
+	<% @subsections.each do |subsection| %>
+		<p class="subsection"><%= link_to subsection.title, page_path(subsection.section.permalink, subsection.permalink) %></p>
+	<% end %>
+
 	</div>
+
+<% end %>
+
+<% if !@news.blank? %>
+
+	<div class="news">
+
+		<div class="badge">
+			<i>главные новости</i>
+			<div class="badge-right"></div>
+		</div>
+
+	<% @news.each do |article| %>
+
+			<div class="news-block">
+
+			<h2><%= l article.created_at, format: :short %> | <%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
+
+			<% if !article.featured_image.empty? %>
+				<%= link_to aws_image_tag(article.featured_image, class: 'border', style: 'thumb'), page_path(article.section.permalink, article.permalink) %>
+			<% end %>
+
+			<p class="preview">
+				<%= raw strip_tags article.announce %>
+			</p>
+
+			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), class: "preview" %>
+
+			</div>
+
+	<% end %>
+
+	</div>
+
 <% end %>

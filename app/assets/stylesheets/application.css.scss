@@ -82,9 +82,9 @@ body {
 	display: table;
 	float: left;
 	list-style: none outside none;
-	padding-top: 14px;
+	padding: 14px 11px;
 	text-align: center;
-	width: 846px;
+	width: 926px;
 }
 
 .menu li {
@@ -95,17 +95,15 @@ body {
 	background-image: url("menu-dividers.png");
 	background-repeat: no-repeat;
 	height: 20px;
-	margin: 22px 11px 0;
 }
 
 .menu-left {
-	float: left;
+    background-position: 0 8px;
 	width: 29px;
 }
 
 .menu-right {
-	background-position: -74px 0;
-	float: right;
+	background-position: -74px 8px;
 	width: 29px;
 }
 
@@ -165,16 +163,13 @@ body {
 	float: left;
 	width: 218px;
 	margin-left: 20px;
+  padding-bottom: 50px;
 }
 
 .sidebar img {
   float: left;
-  margin: 0 5px 0 0;
+  margin: 3px 5px 0 0;
   width: 65px;
-}
-
-.preview {
-  font-size: 0.7em;
 }
 // -
 
@@ -184,10 +179,6 @@ body {
   margin-right: 20px;
   padding: 0 0 50px;
   width: 671px;
-}
-
-.body {
-	//padding: 0 11px;
 }
 
 .body .featured {
@@ -228,14 +219,23 @@ body {
 // --
 
 // --Text
-.content p, .content h2, .content ol, .content a {
+.content p, .content h2, .content ol, .content ul, .content a {
   font-family: "Lucida Grande", Verdana;
   font-weight: normal;
 }
 
-h2 {
+.main h2 {
   font-size: 1em;
-  //clear: both;
+}
+
+.sidebar h2 {
+  font-size: 0.8em;
+  margin-top: 3px;
+}
+
+.preview {
+  font-size: 0.7em;
+  margin-top: 3px;
 }
 
 .badge i {
@@ -250,10 +250,9 @@ h2 {
 .main p {
   font-size: 0.8em;
   padding: 0 0 8px 0;
-  // overflow: auto;
 }
 
-.body ol {
+.body ol, .body ul {
   font-size: 0.8em;
   padding: 0 0 20px 50px;
   overflow: auto;
@@ -273,7 +272,6 @@ h2 {
 }
 
 .content a {
-  font-weight: normal;
   color: #000000;
   text-decoration: none;
 }

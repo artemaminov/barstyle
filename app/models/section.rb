@@ -10,10 +10,14 @@ class Section < ActiveRecord::Base
 		Page.at_main(self.permalink)
 	end
 
+	def self.list
+		order("position")
+	end
+
 
 	protected
 
 	def make_permalink
-		self.permalink = name.to_url if permalink.empty?
+		self.permalink = name.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
 	end
 end

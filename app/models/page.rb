@@ -6,19 +6,29 @@ class Page < ActiveRecord::Base
 
 	before_validation :make_permalink
 
-	def self.news(except_article = nil)
-		joins(:section).where('sections.position = 1 AND main = FALSE').order('created_at DESC').limit(5)
+	def self.subsections(section)
+		joins(:section).where("sections.permalink = '#{section}' AND is_subsection = TRUE")
 	end
 
+	# TODO section_id = 1 hardcode
+	def self.news(except_article = nil)
+		where("section_id = 1 AND main = TRUE AND is_subsection = FALSE AND NOT permalink = '#{except_article}'").order("created_at DESC").limit(5)
+	end
+
+	# TODO permalink == 'news' hardcode
 	def self.at_main(permalink)
-		joins(:section).where("sections.permalink = '#{permalink}' AND main = TRUE")
+		if permalink == 'news'
+			joins(:section).where("sections.permalink = '#{permalink}' AND main = FALSE").order("created_at DESC")
+		else
+			joins(:section).where("sections.permalink = '#{permalink}' AND main = TRUE").order("CASE WHEN announce='' THEN 1 ELSE 0 END, created_at DESC")
+		end
 	end
 
 
 	protected
 
 	def make_permalink
-		self.permalink = title.to_url if permalink.empty?
+		self.permalink = title.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
 	end
 
 end
