@@ -6,13 +6,24 @@ class Section < ActiveRecord::Base
 
 	before_validation :make_permalink
 
-	def pages_at_main
-		Page.at_main(self.permalink)
-	end
-
+	# Menu list
 	def self.list
 		order("position")
 	end
+
+	# Current menu section
+	def self.current(permalink)
+		find_by_permalink!(permalink)
+	end
+
+	# Subsections
+	def self.subsections(current_section)
+		current(current_section).pages.where("is_subsection = TRUE")
+	end
+
+	#def pages_at_main
+	#	Page.at_main(self.permalink)
+	#end
 
 
 	protected
