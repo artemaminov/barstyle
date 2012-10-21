@@ -30,7 +30,7 @@ body {
 	background: url("words.png") no-repeat scroll 50% 50px transparent;
 }
 
-// -Template
+/* -Template */
 .container {
 	background: url("bgpaper.jpg") repeat scroll 0 0 transparent;
 	position: absolute;
@@ -41,7 +41,7 @@ body {
 }
 
 .woodframe {
-	pointer-events:none;
+	pointer-events: none;
 	background: url("woodframe.png") repeat-y scroll 0 0 transparent;
 	position: absolute;
 	top: 0;
@@ -71,7 +71,7 @@ body {
 	margin: 41px 0 0 32px;
 }
 
-// --Menu
+/* --Menu */
 .menu {
 	background: url("bgmenu.png") no-repeat scroll 0 0 transparent;
 	width: 948px;
@@ -111,15 +111,15 @@ body {
   background-position: -34px 8px;
   width: 36px;
 }
-// --
+/* -- */
 
 .content {
   overflow: auto;
 }
-// -
+/* - */
 
-// -Badges
-// --Curved
+/* -Badges */
+/* --Curved */
 .badge {
 	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
 	height: 42px;
@@ -133,9 +133,9 @@ body {
 	height: 29px;
 	width: 13px;
 }
-// --
+/* -- */
 
-// --Link
+/* --Link */
 .badge-link {
 	background: url("badge-link-left.png") no-repeat scroll 0 0 transparent;
 	float: left;
@@ -149,10 +149,10 @@ body {
 	margin: 1px 0 0;
 	width: 15px;
 }
-// --
-// -
+/* -- */
+/* - */
 
-// -Sidebar
+/* -Sidebar */
 .sidebar, .main {
 	background-color: #d3d3c3;
 	min-height: 400px;
@@ -171,9 +171,9 @@ body {
   margin: 3px 5px 0 0;
   width: 65px;
 }
-// -
+/* - */
 
-// -Main block
+/* -Main block */
 .main {
   float: right;
   margin-right: 20px;
@@ -191,9 +191,9 @@ body {
   overflow: auto;
   margin-bottom: 10px;
 }
-// -
+/* - */
 
-// -Footer
+/* -Footer */
 .zz {
   background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
   clear: both;
@@ -204,10 +204,10 @@ body {
   background-color: #301e13;
   height: 200px;
 }
-// -
+/* - */
 
-// -General
-// --Media
+/* -General */
+/* --Media */
 .media_embed {
   overflow: visible !important;
 }
@@ -216,9 +216,9 @@ body {
   margin: 10px auto;
   @extend .border
 }
-// --
+/* -- */
 
-// --Text
+/* --Text */
 .content p, .content h2, .content ol, .content ul, .content a {
   font-family: "Lucida Grande", Verdana;
   font-weight: normal;
@@ -261,9 +261,9 @@ body {
 .underlined {
   text-decoration: underline !important;
 }
-// --
+/* -- */
 
-// --Links
+/* --Links */
 .menu a {
   text-decoration: none;
   color: #a45a1f;
@@ -289,9 +289,9 @@ body {
   margin: 1px 0 0 11px;
   padding: 4px 5px 0;
 }
-// --
+/* -- */
 
-// --Social icons
+/* --Social icons */
 .social-icons {
   bottom: 50px;
   position: absolute;
@@ -320,7 +320,7 @@ body {
 .sc-tw {
   background-position: -112px 0;
 }
-// --
+/* -- */
 
 .news {
   padding: 10px;
@@ -337,4 +337,4 @@ body {
 .vk-widget {
   margin-top: 15px;
 }
-// -
+/* - */

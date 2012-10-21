@@ -6,37 +6,47 @@
 	<%= stylesheet_link_tag "application", media: "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
+	<!--<script src="modernizr.js"></script>-->
+	<script>
+		if (!Modernizr.testProp('pointerEvents')) {
+			$(".woodframe").css("z-index: -1");
+		}
+	</script>
 </head>
 <body>
 	<div class="container">
+		<header>
 
-		<div class="head">
-			<!-- <div class="bglogo">
-				<%= link_to(image_tag("bgpaper.jpg", class: "logo", alt: "На главную")) %>
-			</div> -->
-		</div>
+			<div class="head">
+				<!-- <div class="bglogo">
+					<%= link_to(image_tag("bgpaper.jpg", class: "logo", alt: "На главную")) %>
+				</div> -->
+			</div>
 
-		<div class="menu">
-			<ul>
-				<li class="menu-left"></li>
-				<% @menu_sections.each do |section| %>
-					<li><%= link_to section.name, section_path(section.permalink) %></li>
-					<% if section != @menu_sections.last %>
-						<li class="menu-divider"></li>
-					<% end %>
-				<% end %>
-				<li class="menu-right"></li>
-			</ul>
-		</div>
+			<nav>
+				<div class="menu">
+					<ul>
+						<li class="menu-left"></li>
+						<% @menu_sections.each do |section| %>
+							<li><%= link_to section.name, section_path(section.permalink) %></li>
+							<% if section != @menu_sections.last %>
+								<li class="menu-divider"></li>
+							<% end %>
+						<% end %>
+						<li class="menu-right"></li>
+					</ul>
+				</div>
+			</nav>
 
+		</header>
 		<div class="content">
-			<div class="sidebar">
+			<section class="sidebar">
 
 				<%= render 'shared/sidebar' %>
 
-			</div>
+			</section>
 
-			<div class="main">
+			<section class="main">
 				<div class="news">
 					<div class="badge">
 						<i><%= normalize(@title) %></i>
@@ -49,17 +59,19 @@
 					</div>
 				</div>
 
-			</div>
+			</section>
 			<div class="zz"></div>
 		</div>
 
-		<div class="footer">
-			<div class="social-icons">
-				<a href="http://vk.com" rel="nofollow"><i class="sc-vk"></i></a>
-				<a href="http://twitter.com" rel="nofollow"><i class="sc-tw"></i></a>
-				<a href="http://facebook.com" rel="nofollow"><i class="sc-fb"></i></a>
+		<footer>
+			<div class="footer">
+				<div class="social-icons">
+					<a href="http://vk.com" rel="nofollow"><i class="sc-vk"></i></a>
+					<a href="http://twitter.com" rel="nofollow"><i class="sc-tw"></i></a>
+					<a href="http://facebook.com" rel="nofollow"><i class="sc-fb"></i></a>
+				</div>
 			</div>
-		</div>
+		</footer>
 
 		<div class="woodframe"></div>
 	</div>
