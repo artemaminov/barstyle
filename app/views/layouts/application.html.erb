@@ -8,8 +8,8 @@
 	<%= csrf_meta_tags %>
 	<!--<script src="modernizr.js"></script>-->
 	<script>
-		if (!Modernizr.testProp('pointerEvents')) {
-			$(".woodframe").css("z-index: -1");
+		if (Modernizr.testProp('pointerEvents')) {
+			$(".woodframe").css("z-index", -1);
 		}
 	</script>
 </head>
