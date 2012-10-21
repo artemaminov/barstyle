@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
 
 	before_validation :make_permalink
 
-	def	self.current(permalink)
+	def	self.show(permalink)
 		find_by_permalink!(permalink)
 	end
 
@@ -28,7 +28,11 @@ class Page < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = title.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
+		if self.section.show_in_menu
+			self.permalink = title.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
+		else
+			self.permalink = ''
+		end
 	end
 
 end

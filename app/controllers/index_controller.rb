@@ -4,21 +4,25 @@ class IndexController < ApplicationController
 
   def home
 		# Home page
+		home_page = Page.find_by_permalink(@page_permalink)
+		@title = home_page.section.name
+		@content = home_page
+		render template: "index/show_page"
 	end
 
 	def show_section
 		# Section if found
-		current_section = Section.current(params[:section])
+		current_section = Section.current(@current_section_name)
 		if current_section
 			@title = current_section.name
 			@section = current_section
-			@pages_at_main = Page.at_main(params[:section])
+			@pages_at_main = Page.at_main(@current_section_name)
 		end
 	end
 
 	def show_page
 		# Desired page if found
-		page = Page.current(params[:page_permalink])
+		page = Page.show(@page_permalink)
 		if page
 			@title = page.section.name
 			@content = page
@@ -34,10 +38,12 @@ class IndexController < ApplicationController
 	protected
 
 	def get_content
+		@page_permalink = params.fetch(:page_permalink, '')
+		@current_section_name = params.fetch(:section, '')
 		# Requesting menu, menu subsections and news except current
 		@menu_sections = Section.list
-		@news = Page.news(params.fetch(:page_permalink, ''))
-		@subsections = Section.subsections(params.fetch(:section, ''))
+		@news = Page.news(@page_permalink)
+		@subsections = Section.subsections(@current_section_name)
 	end
 
 end

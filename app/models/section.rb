@@ -1,6 +1,6 @@
 class Section < ActiveRecord::Base
 
-  attr_accessible :name, :permalink, :position
+  attr_accessible :show_in_menu, :name, :permalink, :position
 
 	has_many :pages
 
@@ -8,7 +8,7 @@ class Section < ActiveRecord::Base
 
 	# Menu list
 	def self.list
-		order("position")
+		where("show_in_menu = TRUE").order("position")
 	end
 
 	# Current menu section
