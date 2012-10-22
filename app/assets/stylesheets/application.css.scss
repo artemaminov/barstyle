@@ -1,3 +1,5 @@
+//= require jquery.fancybox.css
+
 * {
   margin: 0;
   padding: 0;
@@ -249,7 +251,7 @@ body {
 
 .main p {
   font-size: 0.8em;
-  padding: 0 0 8px 0;
+  padding: 0 0 20px 0;
 }
 
 .body ol, .body ul {

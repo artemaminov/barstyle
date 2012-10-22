@@ -1,7 +1,9 @@
 <h2><%= @content.title %></h2>
 
 <% if !@content.featured_image.empty? %>
-	<%= image_tag(@content.featured_image, class: 'featured border') %>
+	<%= link_to aws_image_tag(@content.featured_image, style: "original", only_url: true), rel: "group", class: "fancybox" do %>
+		<%= image_tag(@content.featured_image, class: 'featured border') %>
+	<% end %>
 <% end %>
 
 <%= raw @content.text %>

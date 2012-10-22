@@ -5,9 +5,12 @@ module ApplicationHelper
 	end
 
 	def aws_image_tag(source, options = {})
-		image_url = image_tag(source, options)
+		if options[:only_url]
+			return source.gsub(/\/page_preview\//, "/#{options[:style]}/").html_safe
+		end
+		image_tag = image_tag(source, options)
 		# image_id = image_url.match(/(?<=\/images\/)(\d)+(?=\/)/)
-		image_url.gsub(/\/page_preview\//, "/#{options[:style]}/").html_safe
+		image_tag.gsub(/\/page_preview\//, "/#{options[:style]}/").html_safe
 	end
 
 end
