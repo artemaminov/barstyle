@@ -1,4 +1,5 @@
-//= require jquery.fancybox.css
+//= require jquery.fancybox
+//= require_self
 
 * {
   margin: 0;
@@ -32,7 +33,7 @@ body {
 	background: url("words.png") no-repeat scroll 50% 50px transparent;
 }
 
-/* -Template */
+/* +Template */
 .container {
 	background: url("bgpaper.jpg") repeat scroll 0 0 transparent;
 	position: absolute;
@@ -73,24 +74,22 @@ body {
 	margin: 41px 0 0 32px;
 }
 
-/* --Menu */
+/* ++Menu */
 .menu {
 	background: url("bgmenu.png") no-repeat scroll 0 0 transparent;
 	width: 948px;
 	height: 89px;
-}
-
-.menu ul {
-	display: table;
-	float: left;
-	list-style: none outside none;
-	padding: 14px 11px;
-	text-align: center;
-	width: 926px;
-}
-
-.menu li {
-  display: table-cell;
+    ul {
+      display: table;
+      float: left;
+      list-style: none outside none;
+      padding: 14px 11px;
+      text-align: center;
+      width: 926px;
+    }
+    li {
+      display: table-cell;
+    }
 }
 
 .menu-left, .menu-right, .menu-divider {
@@ -120,8 +119,8 @@ body {
 }
 /* - */
 
-/* -Badges */
-/* --Curved */
+/* +Badges */
+/* ++Curved */
 .badge {
 	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
 	height: 42px;
@@ -137,11 +136,12 @@ body {
 }
 /* -- */
 
-/* --Link */
+/* ++Link */
 .badge-link {
 	background: url("badge-link-left.png") no-repeat scroll 0 0 transparent;
 	float: left;
 	height: 26px;
+    margin-top: -15px;
 }
 
 .badge-link-right {
@@ -154,7 +154,7 @@ body {
 /* -- */
 /* - */
 
-/* -Sidebar */
+/* +Sidebar */
 .sidebar, .main {
 	background-color: #d3d3c3;
 	min-height: 400px;
@@ -165,17 +165,19 @@ body {
 	float: left;
 	width: 218px;
 	margin-left: 20px;
-  padding-bottom: 50px;
-}
-
-.sidebar img {
-  float: left;
-  margin: 3px 5px 0 0;
-  width: 65px;
+    padding-bottom: 50px;
+    img {
+      float: left;
+      margin: 3px 5px 0 0;
+      width: 65px;
+    }
+    .subsection {
+      padding-bottom: 20px;
+    }
 }
 /* - */
 
-/* -Main block */
+/* +Main block */
 .main {
   float: right;
   margin-right: 20px;
@@ -195,7 +197,7 @@ body {
 }
 /* - */
 
-/* -Footer */
+/* +Footer */
 .zz {
   background: url("zzbottom.png") repeat-x scroll 0 20px transparent;
   clear: both;
@@ -208,8 +210,8 @@ body {
 }
 /* - */
 
-/* -General */
-/* --Media */
+/* +General */
+/* ++Media */
 .media_embed {
   overflow: visible !important;
 }
@@ -220,14 +222,22 @@ body {
 }
 /* -- */
 
-/* --Text */
-.content p, .content h2, .content ol, .content ul, .content a {
-  font-family: "Lucida Grande", Verdana;
-  font-weight: normal;
+/* ++Text */
+.content {
+  h1, h2, p, ol, ul, a {
+    font-family: "Lucida Grande", Verdana;
+    font-weight: normal;
+  }
 }
 
-.main h2 {
-  font-size: 1em;
+.main {
+  h1 {
+    font-size: 1.4em;
+    padding-bottom: 5px;
+  }
+  h2 {
+    font-size: 1em;
+  }
 }
 
 .sidebar h2 {
@@ -265,7 +275,7 @@ body {
 }
 /* -- */
 
-/* --Links */
+/* ++Links */
 .menu a {
   text-decoration: none;
   color: #a45a1f;
@@ -293,7 +303,7 @@ body {
 }
 /* -- */
 
-/* --Social icons */
+/* ++Social icons */
 .social-icons {
   bottom: 50px;
   position: absolute;

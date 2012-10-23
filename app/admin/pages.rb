@@ -23,7 +23,7 @@ ActiveAdmin.register Page do
 			f.input :title
 			f.input :featured_image, :as => :rich_picker
 			f.input :announce, :input_html => { :rows => 5 }
-			f.input :text, :as => :rich, :config => { :width => '76%', :height => '400px' }
+			f.input :text, :as => :rich, :config => { :width => '671px', :height => '400px' }
 			f.input :static_attached
 			f.input :permalink
 		end

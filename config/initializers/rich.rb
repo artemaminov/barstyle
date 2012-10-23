@@ -11,7 +11,13 @@ if Object.const_defined?("Rich")
     # For example, the elements available in the formats
     # dropdown are defined like this:
     #   config.editor[:format_tags] = "h3;p;pre"
-    # 
+
+		# JS File (ckeditor/plugins/styles/styles/....js) for Editor's styles
+		config.editor[:stylesSet] = "custom"
+		# CSS for in editor styling
+		config.editor[:contentsCss] = "/assets/ckeditor.css"
+
+				#
     # By default, Rich visualizes what type of element
     # you are editing. To disable this:
     #   config.editor[:startupOutlineBlocks] = false
@@ -28,8 +34,8 @@ if Object.const_defined?("Rich")
     #   rake rich:refresh_assets
     config.image_styles = {
       :thumb => "100x100#",
-      :news_list => "230x150>",
-      :page_preview => "230x280>"
+      :news_list => "200x150>",
+      :page_preview => "200x280>"
     }
 
 		config.allow_embeds = true

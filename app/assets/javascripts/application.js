@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.fancybox.pack
+//= require modernizr
+//= require_self
 
 $(document).ready(function() {
 
@@ -42,7 +44,16 @@ $(document).ready(function() {
     if (!Modernizr.pointerevents) {
         $(".woodframe").css("z-index", -1);
     }
-    
+
+    fancyImage = $('.body img.fancybox');
+    if (fancyImage.length > 0) {
+        for (var i = 0; i < fancyImage.length; i++) {
+            fancyThumbUrl = $(fancyImage[i]).attr('src');
+            fancyOrigUrl = fancyThumbUrl.replace('page_preview', 'original');
+            $(fancyImage[i]).wrap('<a class="fancybox" rel="fancygroup" href="' + fancyOrigUrl + '" />');
+            $(fancyImage[i]).removeClass('fancybox');
+        };
+    }
     $(".fancybox").fancybox({
         helpers : {
             overlay : {
