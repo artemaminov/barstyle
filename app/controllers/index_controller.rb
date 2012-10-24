@@ -2,30 +2,23 @@ class IndexController < ApplicationController
 
 	before_filter :get_content
 
-  def home
-		# Home page
-		home_page = Page.find_by_permalink(@page_permalink)
-		@title = home_page.section.name
-		@content = home_page
-		render template: "index/show_page"
-	end
-
-	def show_section
-		# Section if found
-		current_section = Section.current(@current_section_name)
-		if current_section
-			@title = current_section.name
-			@section = current_section
-			@pages_at_main = Page.at_main(@current_section_name)
-		end
-	end
-
 	def show_page
 		# Desired page if found
 		page = Page.show(@page_permalink)
 		if page
 			@title = page.section.name
 			@content = page
+		end
+	end
+
+	def show_section
+		# Section if found
+		current_section = Section.current(@current_section_name)
+		if current_section
+			@news_section = current_section.is_news_section
+			@title = current_section.name
+			@section = current_section
+			@pages_at_main = current_section.pages_at_main
 		end
 	end
 

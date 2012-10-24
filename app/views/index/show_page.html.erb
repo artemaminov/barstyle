@@ -1,7 +1,3 @@
 <h1><%= @content.title %></h1>
-
-<% if !@content.featured_image.empty? %>
-		<%= image_tag(@content.featured_image, class: 'fancybox featured border') %>
-<% end %>
-
+	<%= image_tag @content.featured_image, class: 'fancybox featured border' unless @content.featured_image.blank? %>
 <%= raw @content.text %>

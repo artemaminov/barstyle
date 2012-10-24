@@ -112,12 +112,12 @@ body {
   background-position: -34px 8px;
   width: 36px;
 }
-/* -- */
+/* --Menu */
 
 .content {
   overflow: auto;
 }
-/* - */
+/* -Template */
 
 /* +Badges */
 /* ++Curved */
@@ -134,7 +134,7 @@ body {
 	height: 29px;
 	width: 13px;
 }
-/* -- */
+/* --Curved */
 
 /* ++Link */
 .badge-link {
@@ -151,8 +151,8 @@ body {
 	margin: 1px 0 0;
 	width: 15px;
 }
-/* -- */
-/* - */
+/* --Link */
+/* -Badges */
 
 /* +Sidebar */
 .sidebar, .main {
@@ -163,7 +163,7 @@ body {
 
 .sidebar {
 	float: left;
-	width: 218px;
+	width: 230px;
 	margin-left: 20px;
     padding-bottom: 50px;
     img {
@@ -175,14 +175,14 @@ body {
       padding-bottom: 20px;
     }
 }
-/* - */
+/* -Sidebar */
 
 /* +Main block */
 .main {
   float: right;
   margin-right: 20px;
   padding: 0 0 50px;
-  width: 671px;
+  width: 660px;
 }
 
 .body .featured {
@@ -195,7 +195,7 @@ body {
   overflow: auto;
   margin-bottom: 10px;
 }
-/* - */
+/* -Main block */
 
 /* +Footer */
 .zz {
@@ -208,19 +208,20 @@ body {
   background-color: #301e13;
   height: 200px;
 }
-/* - */
+/* -Footer */
 
 /* +General */
 /* ++Media */
 .media_embed {
   overflow: visible !important;
 }
+
 .media_embed iframe {
   width: 645px;
   margin: 10px auto;
   @extend .border
 }
-/* -- */
+/* --Media */
 
 /* ++Text */
 .content {
@@ -236,7 +237,7 @@ body {
     padding-bottom: 5px;
   }
   h2 {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }
 
@@ -259,7 +260,7 @@ body {
   height: 29px;
 }
 
-.main p {
+.main p, .main a {
   font-size: 0.8em;
   padding: 0 0 10px 0;
 }
@@ -273,7 +274,7 @@ body {
 .underlined {
   text-decoration: underline !important;
 }
-/* -- */
+/* --Text */
 
 /* ++Links */
 .menu a {
@@ -301,7 +302,7 @@ body {
   margin: 1px 0 0 11px;
   padding: 4px 5px 0;
 }
-/* -- */
+/* --Links */
 
 /* ++Social icons */
 .social-icons {
@@ -332,7 +333,7 @@ body {
 .sc-tw {
   background-position: -112px 0;
 }
-/* -- */
+/* --Social icons */
 
 .news {
   padding: 10px;
@@ -347,6 +348,6 @@ body {
 }
 
 .vk-widget {
-  margin-top: 15px;
+  margin-top: 10px;
 }
-/* - */
+/* -General */

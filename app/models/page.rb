@@ -10,18 +10,9 @@ class Page < ActiveRecord::Base
 		find_by_permalink!(permalink)
 	end
 
-	# TODO section_id = 1 hardcode
 	def self.news(except_article)
-		where("section_id = 1 AND at_main = TRUE AND is_subsection = FALSE AND permalink != ?", except_article).order("created_at DESC")
-	end
-
-	# TODO permalink == 'news' hardcode
-	def self.at_main(permalink)
-		if permalink == 'news'
-			joins(:section).where("sections.permalink = ?", permalink).order("created_at DESC")
-		else
-			joins(:section).where("sections.permalink = ? AND at_main = TRUE", permalink).order("CASE WHEN announce = '' THEN 1 ELSE 0 END, created_at DESC")
-		end
+		news_section = Section.find_by_is_news_section(TRUE)
+		where("section_id = ? AND at_main = TRUE AND is_subsection = FALSE AND permalink != ?", news_section.id, except_article).order("created_at DESC")
 	end
 
 

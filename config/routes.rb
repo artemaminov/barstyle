@@ -7,7 +7,7 @@ BarstyleLocal::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
 
-  root :to => 'index#home'
+  root :to => 'index#show_page'
 
 	match '/:section' => 'index#show_section', :as => :section
 	match '/:section/:page_permalink' => 'index#show_page', :as => :page

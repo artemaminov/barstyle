@@ -33,9 +33,9 @@ if Object.const_defined?("Rich")
     # remember to re-generate your styles by running:
     #   rake rich:refresh_assets
     config.image_styles = {
-      :thumb => "100x100#",
-      :news_list => "200x150>",
-      :page_preview => "200x280>"
+      :thumb => "65x65#",
+      :news_list => "130x100#",
+      :page_preview => "190x150#"
     }
 
 		config.allow_embeds = true

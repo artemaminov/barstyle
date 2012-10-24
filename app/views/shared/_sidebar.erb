@@ -1,54 +1,54 @@
 <div class="news">
 
-	<% if !@subsections.blank? %>
+	<% unless @subsections.blank? %>
 		<div class="badge">
 			<i>подразделы</i>
 			<div class="badge-right"></div>
 		</div>
-
 		<% @subsections.each do |subsection| %>
 			<p class="subsection"><%= link_to subsection.title, page_path(subsection.section.permalink, subsection.permalink) %></p>
 		<% end %>
-
 	<% end %>
 
-	<% if !@news.blank? %>
+	<div class="badge">
+		<i>поиск</i>
+		<div class="badge-right"></div>
+	</div>
+	<%= form_tag do %>
+	<%= search_field_tag('Search') %>
+	<%= submit_tag 'Найти' %>
+	<% end %>
 
+	<% unless @news.blank? || @news_section %>
 		<div class="badge">
 			<i>последние новости</i>
 			<div class="badge-right"></div>
 		</div>
-
 		<% @news.each do |article| %>
-
 			<div class="news-block">
-
 			<h2><%= l article.created_at, format: :short %> | <%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
 
-			<% if !article.featured_image.empty? %>
+			<% unless article.featured_image.blank? %>
 				<%= link_to aws_image_tag(article.featured_image, class: 'border', style: 'thumb'), page_path(article.section.permalink, article.permalink) %>
 			<% end %>
 
 			<p class="preview">
 				<%= raw strip_tags article.announce %>
 			</p>
-
 			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), class: "preview" %>
-
 			</div>
-
 		<% end %>
-
 	<% end %>
-
+	<div class="badge">
+		<i>мы в соц. сетях</i>
+		<div class="badge-right"></div>
+	</div>
 	<script type="text/javascript" src="//vk.com/js/api/openapi.js?60"></script>
-
 	<div class="vk-widget border">
 		<!-- VK Widget -->
 		<div id="vk_groups"></div>
 		<script type="text/javascript">
-			VK.Widgets.Group("vk_groups", {mode: 0, width: "194", height: "290"}, -140633303);
+			VK.Widgets.Group("vk_groups", {mode: 0, width: "206", height: "290"}, -140633303);
 		</script>
 	</div>
-
 </div>

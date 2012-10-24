@@ -6,6 +6,7 @@ ActiveAdmin.register Section do
 		column :show_in_menu
 		column :position
 		column :name
+		column :is_news_section
 		column :permalink
 		default_actions
 	end
