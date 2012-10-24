@@ -29,6 +29,6 @@ class Section < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = name.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
+		self.permalink = Utility.make_permalink(self.name, self.permalink)
 	end
 end

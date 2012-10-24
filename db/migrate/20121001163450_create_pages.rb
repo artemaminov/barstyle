@@ -6,7 +6,7 @@ class CreatePages < ActiveRecord::Migration
 			t.text :announce
       t.text :text
       t.string :permalink
-      t.boolean :main
+      t.boolean :at_main
       t.integer :section_id
 			t.boolean :is_subsection
 			t.string :static_attached

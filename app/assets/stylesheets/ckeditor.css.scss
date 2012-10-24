@@ -14,14 +14,6 @@ body[contenteditable = "true"] {
 	background-color: #D3D3C3;
 }
 
-/* +Main block */
-.main {
-  float: right;
-  margin-right: 20px;
-  padding: 0 0 50px;
-  width: 671px;
-}
-
 .featured {
   float: left;
   margin: 3px 10px 0 0;
@@ -32,10 +24,7 @@ body[contenteditable = "true"] {
   overflow: auto;
   margin-bottom: 10px;
 }
-/* - */
 
-/* +General */
-/* ++Media */
 .media_embed {
   overflow: visible !important;
 }
@@ -44,9 +33,7 @@ body[contenteditable = "true"] {
   margin: 10px auto;
   @extend .border
 }
-/* -- */
 
-/* ++Text */
 h1, h2, p, ol, ul, a {
   font-family: "Lucida Grande", Verdana;
   font-weight: normal;
@@ -62,7 +49,7 @@ h2 {
 
 p {
   font-size: 0.8em;
-  padding: 0 0 20px 0;
+  padding: 0 0 10px 0;
 }
 
 ol, ul {
@@ -74,9 +61,7 @@ ol, ul {
 .underlined {
   text-decoration: underline !important;
 }
-/* -- */
 
-/* ++Links */
 a {
   color: #000000;
   text-decoration: none;
@@ -85,7 +70,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-/* -- */
 
 .news {
   padding: 10px;
@@ -94,4 +78,3 @@ a:hover {
 .border {
   border: $border solid $border-color;
 }
-/* - */

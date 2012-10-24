@@ -11,16 +11,16 @@ class Page < ActiveRecord::Base
 	end
 
 	# TODO section_id = 1 hardcode
-	def self.news(except_article = '')
-		where("section_id = 1 AND main = TRUE AND is_subsection = FALSE AND permalink != ?", except_article).order("created_at DESC")
+	def self.news(except_article)
+		where("section_id = 1 AND at_main = TRUE AND is_subsection = FALSE AND permalink != ?", except_article).order("created_at DESC")
 	end
 
 	# TODO permalink == 'news' hardcode
 	def self.at_main(permalink)
 		if permalink == 'news'
-			joins(:section).where("sections.permalink = ? AND main = FALSE", permalink).order("created_at DESC")
+			joins(:section).where("sections.permalink = ?", permalink).order("created_at DESC")
 		else
-			joins(:section).where("sections.permalink = ? AND main = TRUE", permalink).order("CASE WHEN announce = '' THEN 1 ELSE 0 END, created_at DESC")
+			joins(:section).where("sections.permalink = ? AND at_main = TRUE", permalink).order("CASE WHEN announce = '' THEN 1 ELSE 0 END, created_at DESC")
 		end
 	end
 
@@ -29,7 +29,7 @@ class Page < ActiveRecord::Base
 
 	def make_permalink
 		if self.section.show_in_menu
-			self.permalink = title.to_url.gsub(/[\<\>\']/, '') if permalink.empty?
+			self.permalink = Utility.make_permalink(self.title, self.permalink)
 		else
 			self.permalink = ''
 		end
