@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
 
-  attr_accessible :main, :section_id, :permalink, :announce, :text, :title, :featured_image, :is_subsection, :static_attached
+  attr_accessible :at_main, :section_id, :permalink, :announce, :text, :title, :featured_image, :is_subsection, :static_attached
 
 	belongs_to :section
 
