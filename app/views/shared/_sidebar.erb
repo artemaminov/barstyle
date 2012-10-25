@@ -14,9 +14,9 @@
 		<i>поиск</i>
 		<div class="badge-right"></div>
 	</div>
-	<%= form_tag do %>
-	<%= search_field_tag('Search') %>
-	<%= submit_tag 'Найти' %>
+	<%= search_form_for @query, url: search_path, html: { method: :post } do |f| %>
+		<%= f.text_field :title_or_text_cont, class: 'page-search border' %>
+		<%= f.submit 'Найти' %>
 	<% end %>
 
 	<% unless @news.blank? || @news_section %>

@@ -8,8 +8,8 @@ BarstyleLocal::Application.routes.draw do
 
 
   root :to => 'index#show_page'
-
-	match '/:section' => 'index#show_section', :as => :section
-	match '/:section/:page_permalink' => 'index#show_page', :as => :page
+	match '/search' => 'index#search', via: :post, as: :search
+	match '/:section' => 'index#show_section', as: :section
+	match '/:section/:page_permalink' => 'index#show_page', as: :page
 
 end

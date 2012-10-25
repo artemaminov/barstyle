@@ -22,6 +22,12 @@ class IndexController < ApplicationController
 		end
 	end
 
+	def search
+		@title = 'Search'
+		@pages_at_main = @query.result
+		render 'index/show_section'
+	end
+
 	def render_404
 		@title =t('errors.default')
 		render :template => "shared/_not_found", :status => :not_found
@@ -31,6 +37,7 @@ class IndexController < ApplicationController
 	protected
 
 	def get_content
+		@query = Page.search(params[:q])
 		@page_permalink = params.fetch(:page_permalink, '')
 		@current_section_name = params.fetch(:section, '')
 		# Requesting menu, menu subsections and news except current
