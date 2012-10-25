@@ -20,7 +20,7 @@ class Page < ActiveRecord::Base
 
 	def make_permalink
 		if self.section.show_in_menu
-			self.permalink = Utility.make_permalink(self.title, self.permalink)
+			self.permalink = Utility.make_permalink(title, permalink)
 		else
 			self.permalink = ''
 		end
