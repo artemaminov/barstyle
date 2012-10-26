@@ -32,6 +32,6 @@ class Section < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = Utility.make_permalink(name, permalink)
+		self.permalink = Utility.make_permalink(name, permalink, self)
 	end
 end

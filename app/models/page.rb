@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
 
 	belongs_to :section
 
-	before_validation :make_permalink
+	before_validation :make_permalink, :main_page_handler
 
 	def	self.show(permalink)
 		find_by_permalink!(permalink)
@@ -21,10 +21,12 @@ class Page < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		if self.section.show_in_menu
-			self.permalink = Utility.make_permalink(title, permalink)
-		else
-			self.permalink = ''
+		self.permalink = Utility.make_permalink(title, permalink, section)
+	end
+
+	def main_page_handler
+		unless self.section.show_in_menu?
+			self.at_main, self.is_subsection = true, false
 		end
 	end
 
