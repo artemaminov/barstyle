@@ -30,7 +30,7 @@ class IndexController < ApplicationController
 
 	def render_404
 		@title =t('errors.default')
-		render :template => "shared/_not_found", :status => :not_found
+		render :template => "app/_not_found", :status => :not_found
 	end
 
 

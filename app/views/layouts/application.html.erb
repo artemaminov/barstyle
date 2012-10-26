@@ -17,26 +17,13 @@
 				</div> -->
 			</div>
 
-			<nav>
-				<div class="menu">
-					<ul>
-						<li class="menu-left"></li>
-						<% @menu_sections.each do |section| %>
-							<li><%= link_to section.name, section_path(section.permalink) %></li>
-							<% if section != @menu_sections.last %>
-								<li class="menu-divider"></li>
-							<% end %>
-						<% end %>
-						<li class="menu-right"></li>
-					</ul>
-				</div>
-			</nav>
+			<%= render 'app/menu' %>
 
 		</header>
 		<div class="content">
 			<section class="sidebar">
 
-				<%= render 'shared/sidebar' %>
+				<%= render 'app/sidebar' %>
 
 			</section>
 

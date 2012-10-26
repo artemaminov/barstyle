@@ -49,12 +49,15 @@ ActiveRecord::Schema.define(:version => 20121001163450) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "featured_image"
+    t.text     "announce"
     t.text     "text"
     t.string   "permalink"
-    t.boolean  "main"
+    t.boolean  "at_main"
     t.integer  "section_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.boolean  "is_subsection"
+    t.string   "static_attached"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "rich_rich_files", :force => true do |t|
@@ -74,8 +77,10 @@ ActiveRecord::Schema.define(:version => 20121001163450) do
     t.string   "name"
     t.string   "permalink"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "show_in_menu"
+    t.boolean  "is_news_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

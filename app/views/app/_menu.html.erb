@@ -1,0 +1,18 @@
+<nav>
+	<div class="menu">
+		<ul>
+			<li class="menu-left"></li>
+			<% if @menu_sections.length > 0 %>
+				<% @menu_sections.each do |section| %>
+					<li><%= link_to section.name, section_path(section.permalink) %></li>
+					<% if section != @menu_sections.last %>
+						<li class="menu-divider"></li>
+					<% end %>
+				<% end %>
+			<% else %>
+				<li><%= link_to 'Создайте меню', '/admin' %></li>
+			<% end %>
+			<li class="menu-right"></li>
+		</ul>
+	</div>
+</nav>

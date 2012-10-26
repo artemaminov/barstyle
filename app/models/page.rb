@@ -12,7 +12,9 @@ class Page < ActiveRecord::Base
 
 	def self.news(except_article)
 		news_section = Section.find_by_is_news_section(TRUE)
-		where("section_id = ? AND at_main = TRUE AND is_subsection = FALSE AND permalink != ?", news_section.id, except_article).order("created_at DESC")
+		if news_section
+			where("section_id = ? AND at_main = TRUE AND is_subsection = FALSE AND permalink != ?", news_section.id, except_article).order("created_at DESC")
+		end
 	end
 
 
