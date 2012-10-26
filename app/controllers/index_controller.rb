@@ -28,11 +28,6 @@ class IndexController < ApplicationController
 		render 'index/show_section'
 	end
 
-	def render_404
-		@title =t('errors.default')
-		render :template => "app/_not_found", :status => :not_found
-	end
-
 
 	protected
 
