@@ -33,6 +33,8 @@ end
 gem 'jquery-rails'
 
 gem 'activeadmin'
+gem "devise-russian"
+
 gem 'rich'
 gem 'aws-sdk', '~> 1.3.4'
 
