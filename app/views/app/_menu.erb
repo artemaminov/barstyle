@@ -4,7 +4,7 @@
 			<li class="menu-left"></li>
 			<% if @menu_sections.length > 0 %>
 				<% @menu_sections.each do |section| %>
-					<li><%= link_to section.name, section_path(section.permalink) %></li>
+					<li><%= link_to section.name, section_path(section.permalink), class: 'glow' %></li>
 					<% if section != @menu_sections.last %>
 						<li class="menu-divider"></li>
 					<% end %>
