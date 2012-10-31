@@ -67,7 +67,6 @@ body {
 	height: 202px;
     display: block;
 	margin: -11px 0 0 70px;
-    z-index: 10000;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -298,9 +297,14 @@ body {
 /* ++Links */
 .menu a {
   text-decoration: none;
-  color: #a45a1f;
+  color: #934b1f;
   font: normal 1.4em "bankir-retro";
   text-shadow: 1px 3px 3px black;
+}
+
+.glow:hover {
+  text-shadow: 1px 3px 3px black;
+  color: #b26222;
 }
 
 .content a {
@@ -368,9 +372,5 @@ body {
 
 .vk-widget {
   margin-top: 10px;
-}
-
-.glow:hover {
-  text-shadow: 0 0 3px #D3D3C3;
 }
 /* -General */
