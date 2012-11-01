@@ -25,9 +25,7 @@ ActiveAdmin.register Page do
 			f.input :featured_image, :as => :rich_picker
 			f.input :announce, :input_html => { :rows => 5 }
 			f.input :text, :as => :rich, :config => { :width => '690px', :height => '400px' }
-			if current_admin_user.email == 'admin@barstyle.info'
-				f.input :static_attached
-			end
+			f.input :static_attached
 		end
 		f.buttons
 	end

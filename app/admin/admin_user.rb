@@ -1,9 +1,8 @@
 ActiveAdmin.register AdminUser do
 
-	menu :if => proc { current_admin_user.email == 'admin@barstyle.info' }
-
 	index do
 		column :email
+		column :role, collection: AdminUser::ROLES
 		column :current_sign_in_at
 		column :last_sign_in_at
 		column :sign_in_count
@@ -15,6 +14,7 @@ ActiveAdmin.register AdminUser do
 	form do |f|
 		f.inputs "Admin Details" do
 			f.input :email
+			f.input :role, collection: AdminUser::ROLES
 			f.input :password
 			f.input :password_confirmation
 		end

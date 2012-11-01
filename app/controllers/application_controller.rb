@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
 
 	rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
+	rescue_from CanCan::AccessDenied do |exception|
+		redirect_to '/admin', :alert => exception.message
+	end
+
+	def current_ability
+		@current_ability ||= Ability.new(current_admin_user)
+	end
+
 
 	private
 

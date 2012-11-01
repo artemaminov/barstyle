@@ -33,6 +33,7 @@ end
 gem 'jquery-rails'
 
 gem 'activeadmin'
+gem 'activeadmin-cancan'
 gem "devise-russian"
 
 gem 'rich'
