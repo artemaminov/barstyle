@@ -1,5 +1,7 @@
 ActiveAdmin.register AdminUser do
 
+	menu :if => proc { current_admin_user.email == 'admin@barstyle.info' }
+
 	index do
 		column :email
 		column :current_sign_in_at

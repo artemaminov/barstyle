@@ -21,11 +21,13 @@ ActiveAdmin.register Page do
 			f.input :at_main, :as => :radio
 			f.input :is_subsection, :as => :radio
 			f.input :title
+			f.input :permalink
 			f.input :featured_image, :as => :rich_picker
 			f.input :announce, :input_html => { :rows => 5 }
 			f.input :text, :as => :rich, :config => { :width => '690px', :height => '400px' }
-			f.input :static_attached
-			f.input :permalink
+			if current_admin_user.email == 'admin@barstyle.info'
+				f.input :static_attached
+			end
 		end
 		f.buttons
 	end
