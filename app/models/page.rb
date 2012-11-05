@@ -6,6 +6,10 @@ class Page < ActiveRecord::Base
 
 	before_validation :make_permalink, :main_page_handler
 
+	validates :section_id, :title, :text, presence: true
+	validates :at_main, :is_subsection, inclusion: { in: [true, false] }
+	validates :permalink, uniqueness: true
+
 	def	self.show(permalink)
 		find_by_permalink!(permalink)
 	end
@@ -21,12 +25,16 @@ class Page < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = Utility.make_permalink(title, permalink, section)
+		unless title.blank? || section.nil?
+			self.permalink = Utility.make_permalink(title, permalink, section)
+		end
 	end
 
 	def main_page_handler
-		unless self.section.show_in_menu?
-			self.at_main, self.is_subsection = true, false
+		unless section.nil?
+			unless section.show_in_menu?
+				self.at_main, self.is_subsection = true, false
+			end
 		end
 	end
 

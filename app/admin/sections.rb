@@ -10,5 +10,16 @@ ActiveAdmin.register Section do
 		column :permalink
 		default_actions
 	end
+
+	form do |f|
+		f.inputs "Basic info" do
+			f.input :name
+			f.input :permalink
+			f.input :position
+			f.input :show_in_menu, as: :radio
+			f.input :is_news_section, as: :radio
+		end
+		f.buttons
+	end
   
 end

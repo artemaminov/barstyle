@@ -6,7 +6,7 @@ class Ability
     #
 		user ||= AdminUser.new # guest user (not logged in)
 			can :manage, :all if user.role == 'admin'
-			can :manage, Page
+			can :manage, [Page, Rich::RichFile]
     #
     # The first argument to `can` is the action you are giving the user permission to do.
     # If you pass :manage it will apply to every action. Other common actions here are

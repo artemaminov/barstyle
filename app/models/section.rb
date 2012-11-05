@@ -7,6 +7,10 @@ class Section < ActiveRecord::Base
 
 	before_validation :make_permalink
 
+	validates :name, presence: true
+	validates :show_in_menu, :is_news_section, inclusion: { in: [true, false] }
+	validates :permalink, uniqueness: true
+
 	# Menu list
 	def self.list
 		where("show_in_menu = TRUE").order("position")
@@ -32,6 +36,8 @@ class Section < ActiveRecord::Base
 	protected
 
 	def make_permalink
-		self.permalink = Utility.make_permalink(name, permalink, self)
+		unless name.blank?
+			self.permalink = Utility.make_permalink(name, permalink, self)
+		end
 	end
 end
