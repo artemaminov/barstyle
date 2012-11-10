@@ -1,5 +1,7 @@
 ActiveAdmin.register Section do
 
+	menu :label => proc{ I18n.t("active_admin.sections") }
+
 	config.sort_order = 'position_asc'
 
 	index do

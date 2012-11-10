@@ -1,5 +1,7 @@
 ActiveAdmin.register AdminUser do
 
+	menu :label => proc{ I18n.t("active_admin.admin_user") }
+
 	index do
 		column :email
 		column :role, collection: AdminUser::ROLES

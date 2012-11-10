@@ -2,7 +2,28 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  active_admin:
+    admin_user: "Пользователи"
+    dashboard: ""
+    pages: "Страницы"
+    sections: "Разделы меню"
   activerecord:
+    models:
+      admin_user: "Пользователи"
+      section: "Разделы"
+      page: "Страницы"
+    attributes:
+      page:
+        at_main: "Отображать как первую страницу раздела?"
+        section: "Раздел"
+        permalink: "Постоянная ссылка"
+        announce: "Анонс"
+        text: "Контент"
+        title: "Заголовок"
+        featured_image: "Изображение для списка новостей"
+        is_subsection: "Страница входит в боковой раздел меню?"
+        static_attached: "Прикрепленный статический HTML"
+        updated_at: "Добавлено / обновлено"
     errors:
       messages:
         blank: "Не может быть пустым"
