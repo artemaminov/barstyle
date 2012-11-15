@@ -14,14 +14,14 @@ ru:
       page: "Страницы"
     attributes:
       page:
-        at_main: "Отображать как первую страницу раздела?"
+        at_main: "Первая страница раздела?"
         section: "Раздел"
         permalink: "Постоянная ссылка"
         announce: "Анонс"
         text: "Контент"
         title: "Заголовок"
         featured_image: "Изображение для списка новостей"
-        is_subsection: "Страница входит в боковой раздел меню?"
+        is_subsection: "Боковой раздел меню?"
         static_attached: "Прикрепленный статический HTML"
         updated_at: "Добавлено / обновлено"
     errors:
@@ -103,3 +103,6 @@ ru:
   errors:
     default: "Ошибка!"
   continue_to_read: " »&nbsp;читать&nbsp;далее..."
+  answer:
+    positive: "Да"
+    negative: "Нет"

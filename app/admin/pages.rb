@@ -2,32 +2,31 @@ ActiveAdmin.register Page do
 
 	menu :label => proc{ I18n.t("active_admin.pages") }
 
+	actions :all, except: [:show]
+
 	filter :section_id
 	filter :title
 	filter :updated_at
 
 	index do
-		column :section_id do |page|
+		column :section do |page|
 			page.section.name
 		end
-		column :at_main
-		column :is_subsection
 		column :title
-		column :featured_image do |page|
-			unless page.featured_image.blank?
-				aws_image_tag(page.featured_image, style: 'thumb')
-			end
+		column :at_main do |s|
+			Utility.t(s.at_main)
 		end
-		column :static_attached
-		column :announce
+		column :is_subsection do |s|
+			Utility.t(s.is_subsection)
+		end
 		default_actions
 	end
 
 	form do |f|
 		f.inputs "Basic info" do
 			f.input :section_id, as: :select, collection: Section.all, label: t("activerecord.attributes.page.section")
-			f.input :at_main, as: :radio, label: t("activerecord.attributes.page.at_main")
-			f.input :is_subsection, as: :radio, label: t("activerecord.attributes.page.is_subsection")
+			f.input :at_main, as: :radio, collection: Utility.yesno, label: t("activerecord.attributes.page.at_main")
+			f.input :is_subsection, as: :radio, collection: Utility.yesno, label: t("activerecord.attributes.page.is_subsection")
 			f.input :title, label: t("activerecord.attributes.page.title")
 			f.input :permalink, label: t("activerecord.attributes.page.permalink")
 			f.input :featured_image, as: :rich_picker, config: { scoped: true, style: 'width: 60%;' }, label: t("activerecord.attributes.page.featured_image")
