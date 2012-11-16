@@ -28,8 +28,8 @@ class Section < ActiveRecord::Base
 	end
 
 	# Subsections
-	def self.subsections(current_section)
-		current(current_section).pages.where("is_subsection = TRUE")
+	def self.subsections(section)
+		current(section).pages.where("is_subsection = TRUE")
 	end
 
 
