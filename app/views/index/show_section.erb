@@ -1,22 +1,25 @@
 <% @pages_at_main.each do |article| %>
+	<div class="badge">
+		<i><%= normalize(article.title) %></i>
+		<div class="badge-right"></div>
+	</div>
+	<div class="body">
+		<div class="news-block">
 
-	<div class="news-block">
+		<% if article.announce.blank? %>
+			<%= image_tag article.featured_image, class: 'featured border' unless article.featured_image.blank? %>
+			<%= raw article.text %>
+			<%= render 'shared/' + article.static_attached unless article.static_attached.blank? %>
+		<% else %>
+			<%= link_to aws_image_tag(article.featured_image, class: 'featured border', style: 'news_list'), page_path(article.section.permalink, article.permalink) unless article.featured_image.blank? %>
+			<p><%= raw article.announce %></p>
+				<!--<div class="badge-link">
+					<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), class: "badge-link" %>
+					<div class="badge-link-right"></div>
+				</div>-->
+				<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink) %>
 
-	<% if article.announce.blank? %>
-		<h2><%= article.title %></h2>
-		<%= image_tag article.featured_image, class: 'featured border' unless article.featured_image.blank? %>
-		<%= raw article.text %>
-		<%= render 'shared/' + article.static_attached unless article.static_attached.blank? %>
-	<% else %>
-		<h2><%= link_to article.title, page_path(article.section.permalink, article.permalink) %></h2>
-		<%= link_to aws_image_tag(article.featured_image, class: 'featured border', style: 'news_list'), page_path(article.section.permalink, article.permalink) unless article.featured_image.blank? %>
-		<p><%= raw article.announce %></p>
-			<!--<div class="badge-link">
-				<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink), class: "badge-link" %>
-				<div class="badge-link-right"></div>
-			</div>-->
-			<%= link_to t('continue_to_read').html_safe, page_path(article.section.permalink, article.permalink) %>
-
-	<% end %>
+		<% end %>
+		</div>
 	</div>
 <% end %>

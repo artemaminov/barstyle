@@ -365,6 +365,10 @@ body {
   border: $border solid $border-color;
 }
 
+.fancybox img:hover {
+  border: $border solid #a31010;
+}
+
 .ya-map {
   background-color: #301E13;
 }

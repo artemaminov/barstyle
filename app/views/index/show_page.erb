@@ -1,3 +1,8 @@
-<h1><%= @content.title %></h1>
+<div class="badge">
+	<i><%= normalize(@content.title) %></i>
+	<div class="badge-right"></div>
+</div>
+<div class="body">
 	<%= image_tag @content.featured_image, class: 'fancybox featured border' unless @content.featured_image.blank? %>
-<%= raw @content.text %>
+	<%= raw @content.text %>
+</div>

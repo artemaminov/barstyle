@@ -22,24 +22,12 @@
 		</header>
 		<div class="content">
 			<section class="sidebar">
-
 				<%= render 'app/sidebar' %>
-
 			</section>
-
 			<section class="main">
 				<div class="news">
-					<div class="badge">
-						<i><%= normalize(@title) %></i>
-						<div class="badge-right"></div>
-					</div>
-					<div class="body">
-
-						<%= yield %>
-
-					</div>
+					<%= yield %>
 				</div>
-
 			</section>
 			<div class="zz"></div>
 		</div>
