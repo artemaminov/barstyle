@@ -7,6 +7,9 @@ ru:
     dashboard: ""
     pages: "Страницы"
     sections: "Разделы меню"
+    attributes:
+      pages:
+        subsection_position: "Порядковый номер"
   activerecord:
     models:
       admin_user: "Пользователи"
@@ -22,6 +25,7 @@ ru:
         title: "Заголовок"
         featured_image: "Изображение для списка новостей"
         is_subsection: "Боковой раздел меню?"
+        subsection_position: "Порядковый номер в боковом разделе меню"
         static_attached: "Прикрепленный статический HTML"
         updated_at: "Добавлено / обновлено"
     errors:

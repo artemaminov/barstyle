@@ -29,7 +29,7 @@ class Section < ActiveRecord::Base
 
 	# Subsections
 	def self.subsections(section)
-		current(section).pages.where("is_subsection = TRUE")
+		current(section).pages.where("is_subsection = TRUE").order("subsection_position ASC")
 	end
 
 

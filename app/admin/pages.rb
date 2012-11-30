@@ -9,7 +9,7 @@ ActiveAdmin.register Page do
 	filter :updated_at
 
 	index do
-		column :section do |page|
+		column :section, sortable: :section_id do |page|
 			page.section.name
 		end
 		column :title
@@ -19,6 +19,7 @@ ActiveAdmin.register Page do
 		column :is_subsection do |s|
 			Utility.t(s.is_subsection)
 		end
+		column t("active_admin.attributes.pages.subsection_position"), :subsection_position
 		default_actions
 	end
 
@@ -27,6 +28,7 @@ ActiveAdmin.register Page do
 			f.input :section_id, as: :select, collection: Section.all, label: t("activerecord.attributes.page.section")
 			f.input :at_main, as: :radio, collection: Utility.yesno, label: t("activerecord.attributes.page.at_main")
 			f.input :is_subsection, as: :radio, collection: Utility.yesno, label: t("activerecord.attributes.page.is_subsection")
+			f.input :subsection_position, label: t("activerecord.attributes.page.subsection_position")
 			f.input :title, label: t("activerecord.attributes.page.title")
 			f.input :permalink, label: t("activerecord.attributes.page.permalink")
 			f.input :featured_image, as: :rich_picker, config: { scoped: true, style: 'width: 60%;' }, label: t("activerecord.attributes.page.featured_image")

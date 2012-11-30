@@ -2,7 +2,7 @@
 
 	<% unless @subsections.blank? %>
 		<div class="badge">
-			<i>подразделы</i>
+			<i><%= normalize(@title) %></i>
 			<div class="badge-right"></div>
 		</div>
 		<% @subsections.each do |subsection| %>
