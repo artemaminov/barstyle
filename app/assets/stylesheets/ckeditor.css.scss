@@ -55,6 +55,15 @@ ol, ul {
   overflow: auto;
 }
 
+table {
+  border: 1px solid $border-color;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  border: 1px solid $border-color;
+}
+
 .underlined {
   text-decoration: underline !important;
 }

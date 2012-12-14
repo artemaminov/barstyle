@@ -16,6 +16,9 @@ if Object.const_defined?("Rich")
 		config.editor[:stylesSet] = "custom"
 		# CSS for in editor styling
 		config.editor[:contentsCss] = "/assets/ckeditor.css"
+		# CKEditor config
+		config.editor[:toolbar] = [['Format','Styles'],['Bold', 'Italic', '-', 'Table', 'NumberedList', 'BulletedList', 'Blockquote', '-', 'richImage', 'richFile','MediaEmbed', '-', 'Link', 'Unlink'],['Source', 'ShowBlocks']]
+		config.editor[:removePlugins] = "image,forms"
 
 				#
     # By default, Rich visualizes what type of element

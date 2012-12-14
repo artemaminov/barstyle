@@ -241,7 +241,7 @@ body {
 
 /* ++Text */
 .content {
-  h1, h2, p, ol, ul, a {
+  h1, h2, p, ol, ul, a, table {
     font-family: "Lucida Grande", Verdana;
     font-weight: normal;
   }
@@ -286,6 +286,24 @@ body {
   font-size: 0.8em;
   padding: 0 0 20px 50px;
   overflow: auto;
+}
+
+table {
+  border: 1px solid $border-color;
+  border-collapse: collapse;
+  font-size: 0.8em;
+}
+
+tr:hover {
+  background-color: #E0E0D8;
+}
+
+td {
+  padding: 2px;
+}
+
+td, th {
+  border: 1px solid $border-color;
 }
 
 .underlined {
