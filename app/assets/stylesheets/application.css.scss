@@ -182,7 +182,11 @@ body {
       width: 65px;
     }
     .subsection {
-      padding-bottom: 5px;
+      font-size: 0.8em;
+      padding-bottom: 3px;
+      a:hover {
+        color: #a31010;
+      }
     }
     input {
       font-size: 0.8em;
@@ -241,7 +245,7 @@ body {
 
 /* ++Text */
 .content {
-  h1, h2, p, ol, ul, a, table {
+  h1, h2, h3, p, ol, ul, a, table {
     font-family: "Lucida Grande", Verdana;
     font-weight: normal;
   }
@@ -254,6 +258,9 @@ body {
   }
   h2 {
     font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1em;
   }
 }
 
