@@ -179,7 +179,7 @@ body {
     padding-bottom: 50px;
     img {
       float: left;
-      margin: 3px 5px 0 0;
+      margin: 3px 5px 5px 0;
       width: 65px;
     }
     .subsection {
@@ -209,12 +209,12 @@ body {
 
 .body .featured {
   float: left;
-  margin: 3px 10px 0 0;
+  margin: 3px 10px 10px 0;
 }
 
 .news-block {
   clear: both;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 /* -Main block */
 
@@ -289,7 +289,7 @@ body {
 .main p, .main a {
   font-size: 0.8em;
   padding: 0 0 10px 0;
-  clear: both;
+  // clear: both;
 }
 
 .body ol, .body ul {
