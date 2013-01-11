@@ -136,6 +136,7 @@ body {
 	height: 42px;
 	margin: 0 0 -10px -19px;
 	padding: 0 0 0 13px;
+    clear: both;
 }
 
 .badge-right {
@@ -213,7 +214,7 @@ body {
 
 .news-block {
   clear: both;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 /* -Main block */
 
@@ -260,7 +261,9 @@ body {
     font-size: 1.3em;
   }
   h3 {
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-bottom: 3px;
   }
 }
 
