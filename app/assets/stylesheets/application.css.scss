@@ -132,10 +132,10 @@ body {
 /* +Badges */
 /* ++Curved */
 .badge {
-	background: url("badge-left.png") no-repeat scroll 0 0 transparent;
+	background: url("badge-left.png") no-repeat scroll 0 20px transparent;
 	height: 42px;
-	margin: 0 0 -10px -19px;
-	padding: 0 0 0 13px;
+	margin: 0 0 -5px -19px;
+	padding: 20px 0 0 13px;
     clear: both;
 }
 
@@ -185,9 +185,9 @@ body {
     .subsection {
       font-size: 0.8em;
       padding-bottom: 3px;
-      a:hover {
-        color: #a31010;
-      }
+      // a:hover {
+        // color: #a31010;
+      // }
     }
     input {
       font-size: 0.8em;
@@ -269,12 +269,12 @@ body {
 
 .sidebar h2 {
   font-size: 0.8em;
-  margin-top: 3px;
+  // margin-top: 3px;
 }
 
 .preview {
   font-size: 0.7em;
-  margin-top: 3px;
+  margin-top: 1px;
 }
 
 .badge i {
@@ -386,7 +386,7 @@ td, th {
 /* --Social icons */
 
 .news {
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .border {
@@ -402,6 +402,6 @@ td, th {
 }
 
 .vk-widget {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /* -General */
