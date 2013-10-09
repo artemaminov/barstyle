@@ -230,6 +230,7 @@ body {
   background-color: #301e13;
   height: 200px;
 }
+
 /* -Footer */
 
 /* +General */
@@ -356,9 +357,18 @@ td, th {
 /* --Links */
 
 /* ++Social icons */
+
+.social-icons, .metrika {
+  position: absolute;
+}
+
+.metrika {
+  bottom: 53px;
+  left: 24px;
+}
+
 .social-icons {
   bottom: 50px;
-  position: absolute;
   right: 15px;
 }
 
