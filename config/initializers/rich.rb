@@ -60,8 +60,8 @@ if Object.const_defined?("Rich")
 		if Rails.env.development?
 			# Development setup
 			Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
-			Paperclip::Attachment.default_options[:bucket] = "spaceheads"
-			Paperclip::Attachment.default_options[:path] = "/barstyle/images/:id/:style/:filename"
+			Paperclip::Attachment.default_options[:bucket] = "barstyle"
+			Paperclip::Attachment.default_options[:path] = "/images/:id/:style/:filename"
 			Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
 			Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
 		elsif Rails.env.production?
