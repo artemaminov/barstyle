@@ -37,7 +37,7 @@ class IndexController < ApplicationController
 		@current_section_name = params.fetch(:section, '')
 		# Requesting menu, menu subsections and news except current
 		@menu_sections = Section.list
-		@news = Page.news(@page_permalink)
+		@news = Page.news(@page_permalink).limit(3)
 		@subsections = Section.subsections(@current_section_name)
 	end
 
