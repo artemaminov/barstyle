@@ -38,7 +38,8 @@ if Object.const_defined?("Rich")
     config.image_styles = {
       :thumb => "65x65#",
       :news_list => "130x100#",
-      :page_preview => "190x150#"
+      :page_preview => "190x150#",
+      :page_width => "636x"
     }
 
 		config.allow_embeds = true
@@ -59,11 +60,11 @@ if Object.const_defined?("Rich")
 
 		if Rails.env.development?
 			# Development setup
-			Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
-			Paperclip::Attachment.default_options[:bucket] = "barstyle"
-			Paperclip::Attachment.default_options[:path] = "/images/:id/:style/:filename"
-			Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
-			Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
+			# Paperclip::Attachment.default_options[:s3_credentials] = "#{Rails.root}/config/s3.yml"
+			# Paperclip::Attachment.default_options[:bucket] = "barstyle"
+			# Paperclip::Attachment.default_options[:path] = "/images/:id/:style/:filename"
+			# Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
+			# Paperclip::Attachment.default_options[:s3_domain_url] = "s3-ap-southeast-1.amazonaws.com"
 		elsif Rails.env.production?
 			# Production setup
 			Paperclip::Attachment.default_options[:s3_credentials] = {
@@ -86,14 +87,14 @@ if Object.const_defined?("Rich")
     #
     # Default:
     # config.allowed_styles = :all
-		config.allowed_styles = :page_preview
+    config.allowed_styles = [:page_preview, :page_width]
     
     # == Default Style
     # 
     # The style to insert by default. In addition to the
     # styles defined above you can also use :original to get 
     # the unprocessed file. Make sure this style exists.
-    config.default_style = :thumb
+    config.default_style = :page_preview
 
 	# == Upload non-image files
 	#
