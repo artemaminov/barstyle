@@ -61,6 +61,12 @@ CKEDITOR.stylesSet.add( 'custom',
                 'class' : 'fancybox border featured'
             }
         },
+        { name : 'Карусель',
+            element : 'ul',
+            attributes : {
+                'class' : 'carousel'
+            }
+        },
         { name : 'Перечеркнутый текст'		, element : 'del' },
         { name : 'Вставленный текст'	, element : 'ins' },
         { name : 'Цитата'	, element : 'q' },
