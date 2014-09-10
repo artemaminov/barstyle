@@ -18,6 +18,15 @@
 //= require_self
 
 $(document).ready(function() {
+    (function($){
+        $.fn.wrapMatch = function(count, className) {
+            var length = this.length;
+            for(var i = 0; i < length ; i+=count) {
+                this.slice(i, i+count).wrapAll('<div '+((typeof className == 'string')?'class="'+className+'"':'')+'/>');
+            }
+            return this;
+        };
+    })(jQuery);
 
     // developer.mozilla.org/en/CSS/pointer-events
     // Test and project pages:
@@ -53,8 +62,9 @@ $(document).ready(function() {
             fancyOrigUrl = fancyThumbUrl.replace('page_preview', 'original');
             $(fancyImage[i]).wrap('<a class="fancybox" rel="fancygroup" href="' + fancyOrigUrl + '" />');
             $(fancyImage[i]).removeClass('fancybox');
-        };
+        }
     }
+    $(".fancybox").wrapMatch(3, 'row');
     $(".fancybox").fancybox({
         helpers : {
             overlay : {
@@ -66,15 +76,15 @@ $(document).ready(function() {
     $(".body .carousel").carouFredSel({
         circular: true,
         infinite: true,
-        height: "auto",
-        width: '100%',
+        height: 300,
+        width: 640,
         auto: {
             timeoutDuration: 6000
 //            play: false
         },
         items: {
             visible: 1,
-            height: "auto",
+            height: 300,
             width: 640,
             minimum: 2
         },

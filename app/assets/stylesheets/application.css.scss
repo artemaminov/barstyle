@@ -405,8 +405,17 @@ td, th {
   border: $border solid $border-color;
 }
 
-.fancybox img:hover {
-  border: $border solid #a31010;
+.fancybox {
+  display: inline-block;
+  &:first-child + .fancybox {
+    padding: 0 29px 10px 29px;
+  }
+  img {
+    margin: 0 !important;
+  }
+  & img:hover {
+    border: $border solid #a31010;
+  }
 }
 
 .ya-map {
