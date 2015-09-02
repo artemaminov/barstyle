@@ -33,7 +33,7 @@ ActiveAdmin.register Page do
 			f.input :permalink, label: t("activerecord.attributes.page.permalink")
 			f.input :featured_image, as: :rich_picker, config: { scoped: true, style: 'width: 60%;' }, label: t("activerecord.attributes.page.featured_image")
 			f.input :announce, input_html: { rows: 5 }, label: t("activerecord.attributes.page.announce")
-			f.input :text, as: :rich, config: { scoped: true, width: '690px', height: '400px' }, label: t("activerecord.attributes.page.text")
+			f.input :text, as: :rich, config: { scoped: true, width: '750px', height: '400px' }, label: t("activerecord.attributes.page.text")
 			f.input :static_attached, label: t("activerecord.attributes.page.static_attached")
 		end
 		f.buttons
